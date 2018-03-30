@@ -2,6 +2,8 @@
 
 Store Link: http://apple.co/1TZWpPK
 
+<img alt="App Logo" width="200px" src="readme_assets/logo.jpeg">
+
 
 Contact will help you to Have Better Relationships.
 
