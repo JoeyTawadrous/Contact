@@ -175,7 +175,7 @@
 /* Begin PBXFileReference section */
 		0DCABA9BDF59FBB07E4BF6C7 /* Pods-Contact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contact/Pods-Contact.debug.xcconfig"; sourceTree = "<group>"; };
 		4432A06CFE1CD4581059A340 /* Pods_Contact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		521706D01BAD779E007BCE73 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants.swift; sourceTree = "<group>"; };
+		521706D01BAD779E007BCE73 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		522421FE1D32915A000ED4BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		522422001D32915F000ED4BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5235B8D81AD9582800B3BAE2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -266,9 +266,9 @@
 		52C980D61D314AD200F7E1B0 /* YALCustomHeightTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALCustomHeightTabBar.m; sourceTree = "<group>"; };
 		52C980D81D314AD200F7E1B0 /* YALFoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBar.h; sourceTree = "<group>"; };
 		52C980D91D314AD200F7E1B0 /* YALFoldingTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBar.m; sourceTree = "<group>"; };
-		52C980ED1D315E9800F7E1B0 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Themes.swift; path = Themes.swift; sourceTree = "<group>"; };
-		52C980EF1D315EA500F7E1B0 /* Two.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Two.swift; path = Two.swift; sourceTree = "<group>"; };
-		52C980F11D315EC000F7E1B0 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About.swift; path = About.swift; sourceTree = "<group>"; };
+		52C980ED1D315E9800F7E1B0 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		52C980EF1D315EA500F7E1B0 /* Two.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Two.swift; sourceTree = "<group>"; };
+		52C980F11D315EC000F7E1B0 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		52C980F51D31657200F7E1B0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52C980F81D3170F300F7E1B0 /* Colorful Theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colorful Theme.png"; sourceTree = "<group>"; };
 		52C980F91D3170F300F7E1B0 /* Girly Theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Girly Theme.png"; sourceTree = "<group>"; };
@@ -377,7 +377,6 @@
 				528B290E1D3B953A00B43319 /* location.png */,
 				528B290F1D3B953A00B43319 /* refresh.png */,
 			);
-			name = Icons;
 			path = Icons;
 			sourceTree = "<group>";
 		};
@@ -387,7 +386,6 @@
 				521706D01BAD779E007BCE73 /* Constants.swift */,
 				5235B8D81AD9582800B3BAE2 /* Utils.swift */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -465,7 +463,6 @@
 				52B8A27D1AE02C76005F8F95 /* SCLAlertView.swift */,
 				52C980F51D31657200F7E1B0 /* StoreKit.framework */,
 			);
-			name = Frameworks;
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
@@ -476,7 +473,6 @@
 				52C980F71D3170D500F7E1B0 /* Themes */,
 				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
 			);
-			name = Images;
 			path = Images;
 			sourceTree = "<group>";
 		};
@@ -494,7 +490,6 @@
 				52B8A28A1AE17BA5005F8F95 /* PureLayout.h */,
 				52B8A28B1AE17BA5005F8F95 /* PureLayoutDefines.h */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -522,7 +517,6 @@
 				52D7776C1D32A8A2006E2C4B /* star@2x.png */,
 				52BB3EEA1AE2FFEB00A12D0C /* tick.png */,
 			);
-			name = "More Icons";
 			path = "More Icons";
 			sourceTree = "<group>";
 		};
@@ -538,7 +532,6 @@
 				52BB3EA01AE2F58800A12D0C /* text.png */,
 				52BB3EA31AE2F58800A12D0C /* twitter.png */,
 			);
-			name = CatchUpsTypes;
 			path = CatchUpsTypes;
 			sourceTree = "<group>";
 		};
@@ -702,7 +695,6 @@
 				52C980ED1D315E9800F7E1B0 /* Themes.swift */,
 				52C980EF1D315EA500F7E1B0 /* Two.swift */,
 			);
-			name = Tabs;
 			path = Tabs;
 			sourceTree = "<group>";
 		};
@@ -720,7 +712,6 @@
 				52C981001D3170F300F7E1B0 /* Tidal Theme.png */,
 				52C981011D3170F300F7E1B0 /* Wave Theme.png */,
 			);
-			name = Themes;
 			path = Themes;
 			sourceTree = "<group>";
 		};
@@ -754,7 +745,6 @@
 				526451991AAF644F002C37A6 /* CatchUps.swift */,
 				52CC532D1AAA4E8A002A51C1 /* People.swift */,
 			);
-			name = Contact;
 			path = Contact;
 			sourceTree = "<group>";
 		};
@@ -769,7 +759,6 @@
 				52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */,
 				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -831,7 +820,6 @@
 				52D0A3E91CAB130A0093FBED /* 8.png */,
 				52D0A3EA1CAB130A0093FBED /* 9.png */,
 			);
-			name = AnimalLineIcons;
 			path = AnimalLineIcons;
 			sourceTree = "<group>";
 		};
@@ -1254,7 +1242,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DCABA9BDF59FBB07E4BF6C7 /* Pods-Contact.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
@@ -1301,7 +1289,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B8A1998062DC460BEB45CEA /* Pods-Contact.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_WARNINGS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
