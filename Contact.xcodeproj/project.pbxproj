@@ -86,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				52CC53251AAA4E8A002A51C1 /* Contact */,
+				AD351FF8DD183D24BD500AE9 /* Frameworks */,
 				688162C05E42C87235AA5BCC /* Pods */,
 				52CC53241AAA4E8A002A51C1 /* Products */,
-				AD351FF8DD183D24BD500AE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,12 +106,12 @@
 				A56D755768525FE3A608B124 /* Frameworks */,
 				52CC53261AAA4E8A002A51C1 /* Resources */,
 				52618C441CA0725D003192AF /* Utils */,
-				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
-				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
-				52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */,
 				5264519B1AAF9194002C37A6 /* AddCatchUp.swift */,
+				52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */,
 				52BB3EF41AE314BA00A12D0C /* CatchUp.swift */,
 				526451991AAF644F002C37A6 /* CatchUps.swift */,
+				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
+				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
 				52CC532D1AAA4E8A002A51C1 /* People.swift */,
 				526880EA206EAE4B005E88D8 /* Settings.swift */,
 				526880EB206EAE4B005E88D8 /* Themes.swift */,
@@ -122,8 +122,8 @@
 		52CC53261AAA4E8A002A51C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				526880E4206EA769005E88D8 /* Fonts */,
 				52CC532A1AAA4E8A002A51C1 /* Contact.xcdatamodeld */,
+				526880E4206EA769005E88D8 /* Fonts */,
 				52CC53271AAA4E8A002A51C1 /* Info.plist */,
 				52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */,
 			);
@@ -143,11 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				522422001D32915F000ED4BC /* MessageUI.framework */,
-				522421FE1D32915A000ED4BC /* QuartzCore.framework */,
 				4432A06CFE1CD4581059A340 /* Pods_Contact.framework */,
+				522421FE1D32915A000ED4BC /* QuartzCore.framework */,
 			);
 			name = Frameworks;
-			path = ..;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		AD351FF8DD183D24BD500AE9 /* Frameworks */ = {
