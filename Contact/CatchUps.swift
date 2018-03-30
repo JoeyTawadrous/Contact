@@ -1,6 +1,7 @@
 import UIKit
 import CoreData
 
+
 class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     struct ClassConstants {
@@ -12,23 +13,24 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    /* MARK: Initialising          */
-    /*******************************/
+	
+	
+	/* MARK: Init
+	/////////////////////////////////////////// */
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(CatchUps.backgoundNofification(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
         
         refresh();
     }
-    
+	
     override func viewWillAppear(_ animated: Bool) {
         refresh();
     }
-    
+	
     func backgoundNofification(_ noftification:Notification){
         refresh();
     }
-    
+	
     func refresh() {
         let defaults = UserDefaults.standard
         selectedPerson = defaults.string(forKey: Constants.LocalData.SELECTED_PERSON)!
@@ -40,16 +42,25 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.backgroundColor = Utils.getNextTableColour(catchUps.count, reverse: false)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.reloadData()
-
     }
+	
+	
+	
+	/* MARK: Actions
+	/////////////////////////////////////////// */
+	@IBAction func addCatchUp(_ sender: AnyObject) {
+		let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
+		let addCatchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.ADD_CATCH_UP) as! AddCatchUp
+		self.show(addCatchUpView as UIViewController, sender: addCatchUpView)
+	}
     
-    
-    /* MARK: Class Methods         */
-    /*******************************/
+	
+	
+	/* MARK: Core Functionality
+	/////////////////////////////////////////// */
     class func deleteCatchUp(_ catchUp: NSManagedObject) {
         let catchUpUUID = catchUp.value(forKey: Constants.CoreData.UUID) as! String
-        
-        
+
         // Remove notification for catchUp object & update app icon badge notification count
         for notification in UIApplication.shared.scheduledLocalNotifications!{
             let notificationUUID = notification.userInfo!["UUID"] as! String
@@ -60,8 +71,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         CatchUps.setBadgeNumbers()
-        
-        
+
         // Remove catchUp object
         let managedObjectContect = Utils.fetchManagedObjectContext()
         managedObjectContect.delete(catchUp)
@@ -90,22 +100,17 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: "")
         
         UIApplication.shared.cancelAllLocalNotifications()
-        
-        
+		
         // for every notification
         for notification in notifications! {
-            
             for catchUp in catchUps {
-                
                 let catchUpUUID = catchUp.value(forKey: Constants.CoreData.UUID) as! String
                 let notificationUUID = notification.userInfo!["UUID"] as! String
-                
-                
+
                 if (notificationUUID == catchUpUUID) {
                     let overdueCatchUps = catchUps.filter({ (catchUp) -> Bool in
                         let when = catchUp.value(forKey: Constants.CoreData.WHEN) as! Date
                         let dateComparisionResult: ComparisonResult = notification.fireDate!.compare(when)
-                        
                         return dateComparisionResult == ComparisonResult.orderedAscending
                     })
                     
@@ -115,32 +120,22 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
-    
-    /* MARK: Class Outlets         */
-    /*******************************/
-    @IBAction func addCatchUp(_ sender: AnyObject) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
-        let addCatchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.ADD_CATCH_UP) as! AddCatchUp
-        self.show(addCatchUpView as UIViewController, sender: addCatchUpView)
-    }
 
-    
-    /* MARK: Table View            */
-    /*******************************/
+	
+	
+	/* MARK: Table Functionality
+	/////////////////////////////////////////// */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: CatchUpsTableViewCell! = tableView.dequeueReusableCell(withIdentifier: Constants.Common.CELL) as? CatchUpsTableViewCell
         if cell == nil {
             cell = CatchUpsTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Constants.Common.CELL)
         }
-        
-        
+
         let catchUp = catchUps[indexPath.row]
         let type = catchUp.value(forKey: Constants.CoreData.TYPE) as! String?
         
         cell.reasonLabel!.text = catchUp.value(forKey: Constants.CoreData.REASON) as! String?
-        
-        
+
         if type == AddCatchUp.TypeOptions.PHONE_CALL {
             cell.thumbnailImageView!.image = UIImage(named: "phone.png")
         }
@@ -167,12 +162,10 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         cell.thumbnailImageView!.image = cell.thumbnailImageView!.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         cell.thumbnailImageView!.tintColor = UIColor.white
-        
-        
+
         cell.backgroundColor = Utils.getNextTableColour(indexPath.row, reverse: false)
         cell.updateConstraints()
-        
-        
+
         // upon cell selection, bg color does not change to gray
         let customColorView = UIView()
         customColorView.backgroundColor = UIColor.clear
@@ -195,8 +188,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let deleteAction = UITableViewRowAction(style: .default, title: "Mark Done") {action in
             let catchUp = self.catchUps[indexPath.row] as! NSManagedObject
             CatchUps.deleteCatchUp(catchUp)
-            
-            
+			
             // Refresh table
             self.catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: self.selectedPerson)
             self.catchUps = self.catchUps.reversed() // newest first
@@ -211,13 +203,11 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
+		
         // Set catchup in NSUserDefaults (so we can get catchup details it later)
         let defaults = UserDefaults.standard
         defaults.set(NSInteger(indexPath.row), forKey: Constants.LocalData.SELECTED_CATCHUP_INDEX)
-        
-        
+		
         // Show CatchUp view
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
         let catchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.CATCH_UP) as! CatchUp
@@ -232,6 +222,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return catchUps.count
     }
 }
+
 
 class CatchUpsTableViewCell : UITableViewCell {
     @IBOutlet var reasonLabel: UILabel?

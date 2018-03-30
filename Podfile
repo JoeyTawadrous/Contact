@@ -6,9 +6,9 @@ target 'Contact' do
   use_frameworks!
 
   # Pods for Contact
-#  pod "MBRateApp"
-#  pod "SARate"
-#    pod 'Armchair', '~> 0.1.1'
-    pod 'PushReview'
+  pod 'SCLAlertView'
+  pod 'FontAwesome.swift'
+  pod 'SwiftForms'
+  pod 'SwiftyStoreKit'
 
 end

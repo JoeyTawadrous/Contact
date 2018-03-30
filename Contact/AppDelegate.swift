@@ -1,41 +1,35 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    struct LocalNotifications {
-        static let DONE_ACTION_IDENTIFIER = "DoneAction"
-        static let DONE_ACTION_TITLE = "Mark Done"
-        static let REMIND_ACTION_IDENTIFIER = "RemindAction"
-        static let REMIND_ACTION_TITLE = "Remind in 30 minutes"
-    }
 
     var window: UIWindow?
     var catchUps = [AnyObject]()
     
-    
-    /* MARK: Initialising          */
-    /*******************************/
+	
+	
+	/* MARK: Init
+	/////////////////////////////////////////// */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         UINavigationController().navigationBar.tintColor = UIColor.white
-        
 
         // Local notifications
         let doneAction = UIMutableUserNotificationAction()
-        doneAction.identifier = AppDelegate.LocalNotifications.DONE_ACTION_IDENTIFIER
-        doneAction.title = AppDelegate.LocalNotifications.DONE_ACTION_TITLE
+        doneAction.identifier = Constants.LocalNotifications.DONE_ACTION_IDENTIFIER
+        doneAction.title = Constants.LocalNotifications.DONE_ACTION_TITLE
         doneAction.activationMode = .background         // don't bring app to foreground
         doneAction.isAuthenticationRequired = false       // don't require unlocking before performing action
         doneAction.isDestructive = true                   // display action in red
         
         let remindAction = UIMutableUserNotificationAction()
-        remindAction.identifier = AppDelegate.LocalNotifications.REMIND_ACTION_IDENTIFIER
-        remindAction.title = AppDelegate.LocalNotifications.REMIND_ACTION_TITLE
+        remindAction.identifier = Constants.LocalNotifications.REMIND_ACTION_IDENTIFIER
+        remindAction.title = Constants.LocalNotifications.REMIND_ACTION_TITLE
         remindAction.activationMode = .background
         remindAction.isDestructive = false
         
@@ -45,18 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         actionCategory.setActions([doneAction, remindAction], for: .minimal)     // for when space is limited - 2 actions max
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: NSSet(array: [actionCategory]) as? Set<UIUserNotificationCategory>))
-    
-        
-        // Custom tab bar
-        initTabBar()
-        
-        
+
         // App reviews
-        PushReview.configureWithAppId("1101260252", appDelegate: self)
+        PushReview.configureWithAppId(Constants.Commmon.APP_ID, appDelegate: self)
         PushReview.registerNotificationSettings()
         PushReview.usesBeforePresenting = 5
-        
-        
+
         return true
     }
     
@@ -104,54 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.applicationIconBadgeNumber = catchUpsDue.count
     }
     
-    
-    /* MARK: Class Methods         */
-    /*******************************/
-    func initTabBar() {
-        if let tabBarController = window?.rootViewController as? YALFoldingTabBarController {
-            
-            let firstItem = YALTabBarItem(
-                itemImage: UIImage(named: "StarofDavid")!,
-                leftItemImage: nil,
-                rightItemImage: nil
-            )
-            
-            let secondItem = YALTabBarItem(
-                itemImage: UIImage(named: "ThorHammer")!,
-                leftItemImage: nil,
-                rightItemImage: nil
-            )
-            
-//            let thirdItem = YALTabBarItem(
-//                itemImage: UIImage(named: "Ankh")!,
-//                leftItemImage: nil,
-//                rightItemImage: nil
-//            )
-            
-            let forthItem = YALTabBarItem(
-                itemImage: UIImage(named: "YinYang")!,
-                leftItemImage: nil,
-                rightItemImage: nil
-            )
-            
-            tabBarController.leftBarItems = [firstItem, secondItem]
-            tabBarController.rightBarItems = [forthItem]
-            tabBarController.centerButtonImage = UIImage(named: "plus")
-            
-            tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
-            tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
-            tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
-            
-            tabBarController.tabBarView.backgroundColor = Utils.getMainColor()
-            tabBarController.tabBarView.tabBarColor = Utils.getNextTableColour(4, reverse: false)
-            tabBarController.tabBarView.dotColor = UIColor.white
-        }
-    }
 
-
-    /* MARK: Core Data stack       */
-    /*******************************/
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.joeyt.InTouch" in the application's documents Application Support directory.
+	
+	/* MARK: Core Data
+	/////////////////////////////////////////// */
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.joeyt.contact" in the application's documents Application Support directory.
     lazy var applicationDocumentsDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1] as URL
@@ -159,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "InTouch", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "Contact", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
@@ -167,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Create the coordinator and store
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("InTouch.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("Contact.sqlite")
         
         var failureReason = "There was an error creating or loading the application's saved data."
         
@@ -211,4 +156,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-

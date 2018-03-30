@@ -1,6 +1,7 @@
 import UIKit
 import CoreData
 
+
 class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     struct ClassConstants {
@@ -12,10 +13,11 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var people = [AnyObject]()
     
     @IBOutlet weak var tableView: UITableView!
+	
+	
     
-    
-    /* MARK: Initialising          */
-    /*******************************/
+	/* MARK: Init
+	/////////////////////////////////////////// */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -26,11 +28,28 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.backgroundColor = Utils.getNextTableColour(people.count, reverse: false)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.reloadData()
-    }
+	}
+	
+	
+	
+	/* MARK: Actions
+	/////////////////////////////////////////// */
+	@IBAction func addPerson(_ sender: AnyObject) {
+		let alert = SCLAlertView()
+		let textField = alert.addTextField(ClassConstants.ADD_PERSON_NAME)
+		alert.addButton(Constants.Common.SUBMIT) {
+			if !textField.text!.isEmpty {
+				self.savePerson(textField.text!, thumbnail: Utils.getRandomImageString())
+				self.tableView.reloadData()
+			}
+		}
+		alert.showEdit(ClassConstants.ADD_PERSON_TITLE, subTitle:ClassConstants.ADD_PERSON_MESSAGE)
+	}
     
-    
-    /* MARK: Class Methods         */
-    /*******************************/
+	
+	
+	/* MARK: Core Functionality
+	/////////////////////////////////////////// */
     func savePerson(_ name: String, thumbnail: String) {
         let person = Utils.createObject(Constants.CoreData.PERSON)
         
@@ -42,25 +61,11 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.backgroundColor = Utils.getNextTableColour(people.count, reverse: false)
     }
-    
-    
-    /* MARK: Class Outlets         */
-    /*******************************/
-    @IBAction func addPerson(_ sender: AnyObject) {
-        let alert = SCLAlertView()
-        let textField = alert.addTextField(ClassConstants.ADD_PERSON_NAME)
-        alert.addButton(Constants.Common.SUBMIT) {
-            if !textField.text!.isEmpty {
-                self.savePerson(textField.text!, thumbnail: Utils.getRandomImageString())
-                self.tableView.reloadData()
-            }
-        }
-        alert.showEdit(ClassConstants.ADD_PERSON_TITLE, subTitle:ClassConstants.ADD_PERSON_MESSAGE)
-    }
-    
-    
-    /* MARK: Table View            */
-    /*******************************/
+	
+	
+	
+	/* MARK: Table Functionality
+	/////////////////////////////////////////// */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: PeopleTableViewCell! = tableView.dequeueReusableCell(withIdentifier: Constants.Common.CELL) as? PeopleTableViewCell
         if cell == nil {
@@ -68,16 +73,13 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         let person = people[indexPath.row]
         
-        
         let name = person.value(forKey: Constants.CoreData.NAME) as! String?
         cell.personLabel!.text = name
-        
         
         let catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: name!)
         let catchUpsCount: Int = catchUps.count
         cell.catchUpCountLabel!.text = String(catchUpsCount)
-        
-        
+		
         let thumbnail = person.value(forKey: Constants.CoreData.THUMBNAIL) as! String?
         cell.thumbnailImageView!.image = UIImage(named: thumbnail!)
         cell.thumbnailImageView!.image = cell.thumbnailImageView!.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
@@ -89,8 +91,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
         cell.backgroundColor = Utils.getNextTableColour(indexPath.row, reverse: false)
         cell.updateConstraints()
-        
-        
+		
         // upon cell selection, bg color does not change to gray
         let customColorView = UIView()
         customColorView.backgroundColor = UIColor.clear
@@ -99,8 +100,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
-    
-    
+	
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete) {
             
@@ -114,8 +114,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     CatchUps.deleteCatchUp(catchUp as! NSManagedObject)
                 }
             }
-            
-            
+			
             // Now delete person
             let personToDelete = people[indexPath.row]
             
@@ -137,7 +136,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.reloadData()
     }
-    
+	
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -155,11 +154,11 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let catchUpsView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.CATCH_UPS) as! CatchUps
         self.show(catchUpsView as UIViewController, sender: catchUpsView)
     }
-    
+	
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 74.0
     }
-    
+	
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
     }
