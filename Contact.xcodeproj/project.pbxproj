@@ -175,7 +175,7 @@
 /* Begin PBXFileReference section */
 		0DCABA9BDF59FBB07E4BF6C7 /* Pods-Contact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contact/Pods-Contact.debug.xcconfig"; sourceTree = "<group>"; };
 		4432A06CFE1CD4581059A340 /* Pods_Contact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		521706D01BAD779E007BCE73 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
+		521706D01BAD779E007BCE73 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants.swift; sourceTree = "<group>"; };
 		522421FE1D32915A000ED4BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		522422001D32915F000ED4BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5235B8D81AD9582800B3BAE2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -266,9 +266,9 @@
 		52C980D61D314AD200F7E1B0 /* YALCustomHeightTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALCustomHeightTabBar.m; sourceTree = "<group>"; };
 		52C980D81D314AD200F7E1B0 /* YALFoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBar.h; sourceTree = "<group>"; };
 		52C980D91D314AD200F7E1B0 /* YALFoldingTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBar.m; sourceTree = "<group>"; };
-		52C980ED1D315E9800F7E1B0 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Themes.swift; path = Tabs/Themes.swift; sourceTree = "<group>"; };
-		52C980EF1D315EA500F7E1B0 /* Two.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Two.swift; path = Tabs/Two.swift; sourceTree = "<group>"; };
-		52C980F11D315EC000F7E1B0 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About.swift; path = Tabs/About.swift; sourceTree = "<group>"; };
+		52C980ED1D315E9800F7E1B0 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Themes.swift; path = Themes.swift; sourceTree = "<group>"; };
+		52C980EF1D315EA500F7E1B0 /* Two.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Two.swift; path = Two.swift; sourceTree = "<group>"; };
+		52C980F11D315EC000F7E1B0 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = About.swift; path = About.swift; sourceTree = "<group>"; };
 		52C980F51D31657200F7E1B0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		52C980F81D3170F300F7E1B0 /* Colorful Theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colorful Theme.png"; sourceTree = "<group>"; };
 		52C980F91D3170F300F7E1B0 /* Girly Theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Girly Theme.png"; sourceTree = "<group>"; };
@@ -368,16 +368,17 @@
 		523DA4811ADF0C51007F7F7D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				528B29081D3B8EE900B43319 /* icon.png */,
-				528B290A1D3B952600B43319 /* cross.png */,
-				528B290B1D3B952600B43319 /* info.png */,
-				528B290E1D3B953A00B43319 /* location.png */,
-				528B290F1D3B953A00B43319 /* refresh.png */,
 				52D0A3731CAB117C0093FBED /* AnimalLineIcons */,
 				52BB3E941AE2EA7A00A12D0C /* CatchUpsTypes */,
 				52BB3E931AE2EA4E00A12D0C /* More Icons */,
+				528B290A1D3B952600B43319 /* cross.png */,
+				528B29081D3B8EE900B43319 /* icon.png */,
+				528B290B1D3B952600B43319 /* info.png */,
+				528B290E1D3B953A00B43319 /* location.png */,
+				528B290F1D3B953A00B43319 /* refresh.png */,
 			);
 			name = Icons;
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		52618C441CA0725D003192AF /* Utils */ = {
@@ -387,6 +388,7 @@
 				5235B8D81AD9582800B3BAE2 /* Utils.swift */,
 			);
 			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		52618C461CA0860B003192AF /* SwiftForms */ = {
@@ -455,25 +457,27 @@
 		526451C81AB238C5002C37A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52C980F51D31657200F7E1B0 /* StoreKit.framework */,
 				52C980B71D314AD100F7E1B0 /* FoldingTabBar */,
 				52B8A2811AE17B84005F8F95 /* PureLayout */,
-				52B8A27D1AE02C76005F8F95 /* SCLAlertView.swift */,
-				528B29121D3BF50600B43319 /* PushReview.swift */,
-				523DA47E1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift */,
 				52618C461CA0860B003192AF /* SwiftForms */,
+				523DA47E1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift */,
+				528B29121D3BF50600B43319 /* PushReview.swift */,
+				52B8A27D1AE02C76005F8F95 /* SCLAlertView.swift */,
+				52C980F51D31657200F7E1B0 /* StoreKit.framework */,
 			);
 			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		528A68B11D394A6F00F265CE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
-				52C980F71D3170D500F7E1B0 /* Themes */,
 				523DA4811ADF0C51007F7F7D /* Icons */,
+				52C980F71D3170D500F7E1B0 /* Themes */,
+				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
 			);
 			name = Images;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		52B8A2811AE17B84005F8F95 /* PureLayout */ = {
@@ -481,6 +485,7 @@
 			children = (
 				52B8A2831AE17BA5005F8F95 /* ALView+PureLayout.h */,
 				52B8A2841AE17BA5005F8F95 /* ALView+PureLayout.m */,
+				52B8A2821AE17BA4005F8F95 /* InTouch-Bridging-Header.h */,
 				52B8A2851AE17BA5005F8F95 /* NSArray+PureLayout.h */,
 				52B8A2861AE17BA5005F8F95 /* NSArray+PureLayout.m */,
 				52B8A2871AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.h */,
@@ -488,51 +493,53 @@
 				52B8A2891AE17BA5005F8F95 /* PureLayout+Internal.h */,
 				52B8A28A1AE17BA5005F8F95 /* PureLayout.h */,
 				52B8A28B1AE17BA5005F8F95 /* PureLayoutDefines.h */,
-				52B8A2821AE17BA4005F8F95 /* InTouch-Bridging-Header.h */,
 			);
 			name = PureLayout;
+			path = PureLayout;
 			sourceTree = "<group>";
 		};
 		52BB3E931AE2EA4E00A12D0C /* More Icons */ = {
 			isa = PBXGroup;
 			children = (
-				524CB41D1D3C29EF00931991 /* YinYang.png */,
 				524CB41E1D3C29EF00931991 /* Ankh.png */,
 				524CB41F1D3C29EF00931991 /* StarofDavid.png */,
 				524CB4201D3C29EF00931991 /* ThorHammer.png */,
+				524CB41D1D3C29EF00931991 /* YinYang.png */,
 				524CB41B1D3C128300931991 /* bank.png */,
+				52BB3EEE1AE3060F00A12D0C /* circle.png */,
+				52BB3EF01AE3090200A12D0C /* circle2.png */,
+				52BB3EF21AE30A0300A12D0C /* circle3.png */,
 				524CB4191D3C11B500931991 /* diamond.png */,
+				523DA4891ADF0C73007F7F7D /* paperclip.png */,
+				523DA4861ADF0C73007F7F7D /* pencil.png */,
+				523DA4911ADF0C73007F7F7D /* person.png */,
+				523DA4921ADF0C73007F7F7D /* person_add.png */,
+				52BB3EE91AE2FFEB00A12D0C /* plus.png */,
+				523DA48B1ADF0C73007F7F7D /* settings.png */,
 				52D777691D32A8A2006E2C4B /* star-gray.png */,
 				52D7776A1D32A8A2006E2C4B /* star-gray@2x.png */,
 				52D7776B1D32A8A2006E2C4B /* star.png */,
 				52D7776C1D32A8A2006E2C4B /* star@2x.png */,
-				52BB3EEE1AE3060F00A12D0C /* circle.png */,
-				52BB3EF01AE3090200A12D0C /* circle2.png */,
-				52BB3EF21AE30A0300A12D0C /* circle3.png */,
-				52BB3EE91AE2FFEB00A12D0C /* plus.png */,
 				52BB3EEA1AE2FFEB00A12D0C /* tick.png */,
-				523DA4861ADF0C73007F7F7D /* pencil.png */,
-				523DA4891ADF0C73007F7F7D /* paperclip.png */,
-				523DA48B1ADF0C73007F7F7D /* settings.png */,
-				523DA4911ADF0C73007F7F7D /* person.png */,
-				523DA4921ADF0C73007F7F7D /* person_add.png */,
 			);
 			name = "More Icons";
+			path = "More Icons";
 			sourceTree = "<group>";
 		};
 		52BB3E941AE2EA7A00A12D0C /* CatchUpsTypes */ = {
 			isa = PBXGroup;
 			children = (
-				52D0A41D1CAC48060093FBED /* other.png */,
-				52D0A4231CAC498E0093FBED /* skype.png */,
-				52BB3E9E1AE2F45600A12D0C /* facebook.png */,
-				52BB3EA01AE2F58800A12D0C /* text.png */,
 				52BB3EA11AE2F58800A12D0C /* email.png */,
+				52BB3E9E1AE2F45600A12D0C /* facebook.png */,
 				52BB3EA21AE2F58800A12D0C /* linkedin.png */,
-				52BB3EA31AE2F58800A12D0C /* twitter.png */,
+				52D0A41D1CAC48060093FBED /* other.png */,
 				523DA4841ADF0C73007F7F7D /* phone.png */,
+				52D0A4231CAC498E0093FBED /* skype.png */,
+				52BB3EA01AE2F58800A12D0C /* text.png */,
+				52BB3EA31AE2F58800A12D0C /* twitter.png */,
 			);
 			name = CatchUpsTypes;
+			path = CatchUpsTypes;
 			sourceTree = "<group>";
 		};
 		52C980B71D314AD100F7E1B0 /* FoldingTabBar */ = {
@@ -691,11 +698,12 @@
 		52C980EC1D315E5400F7E1B0 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				52C980F11D315EC000F7E1B0 /* About.swift */,
 				52C980ED1D315E9800F7E1B0 /* Themes.swift */,
 				52C980EF1D315EA500F7E1B0 /* Two.swift */,
-				52C980F11D315EC000F7E1B0 /* About.swift */,
 			);
 			name = Tabs;
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		52C980F71D3170D500F7E1B0 /* Themes */ = {
@@ -713,15 +721,16 @@
 				52C981011D3170F300F7E1B0 /* Wave Theme.png */,
 			);
 			name = Themes;
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		52CC531A1AAA4E8A002A51C1 = {
 			isa = PBXGroup;
 			children = (
 				52CC53251AAA4E8A002A51C1 /* Contact */,
-				52CC53241AAA4E8A002A51C1 /* Products */,
-				688162C05E42C87235AA5BCC /* Pods */,
 				A56D755768525FE3A608B124 /* Frameworks */,
+				688162C05E42C87235AA5BCC /* Pods */,
+				52CC53241AAA4E8A002A51C1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -736,45 +745,38 @@
 		52CC53251AAA4E8A002A51C1 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */,
-				5264519B1AAF9194002C37A6 /* AddCatchUp.swift */,
-				52CC532D1AAA4E8A002A51C1 /* People.swift */,
-				52BB3EF41AE314BA00A12D0C /* CatchUp.swift */,
-				526451991AAF644F002C37A6 /* CatchUps.swift */,
+				52CC53261AAA4E8A002A51C1 /* Supporting Files */,
 				52C980EC1D315E5400F7E1B0 /* Tabs */,
 				52618C441CA0725D003192AF /* Utils */,
-				52CC53261AAA4E8A002A51C1 /* Supporting Files */,
+				5264519B1AAF9194002C37A6 /* AddCatchUp.swift */,
+				52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */,
+				52BB3EF41AE314BA00A12D0C /* CatchUp.swift */,
+				526451991AAF644F002C37A6 /* CatchUps.swift */,
+				52CC532D1AAA4E8A002A51C1 /* People.swift */,
 			);
 			name = Contact;
-			path = InTouch;
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		52CC53261AAA4E8A002A51C1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
-				52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */,
+				526451C81AB238C5002C37A6 /* Frameworks */,
+				528A68B11D394A6F00F265CE /* Images */,
 				52B8A2981AE18A55005F8F95 /* Bridging-Header.h */,
 				52CC532A1AAA4E8A002A51C1 /* InTouch.xcdatamodeld */,
 				52CC53271AAA4E8A002A51C1 /* Info.plist */,
-				528A68B11D394A6F00F265CE /* Images */,
-				526451C81AB238C5002C37A6 /* Frameworks */,
+				52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */,
+				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
 			);
 			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		52D0A3731CAB117C0093FBED /* AnimalLineIcons */ = {
 			isa = PBXGroup;
 			children = (
 				52D0A3E21CAB130A0093FBED /* 1.png */,
-				52D0A3E31CAB130A0093FBED /* 2.png */,
-				52D0A3E41CAB130A0093FBED /* 3.png */,
-				52D0A3E51CAB130A0093FBED /* 4.png */,
-				52D0A3E61CAB130A0093FBED /* 5.png */,
-				52D0A3E71CAB130A0093FBED /* 6.png */,
-				52D0A3E81CAB130A0093FBED /* 7.png */,
-				52D0A3E91CAB130A0093FBED /* 8.png */,
-				52D0A3EA1CAB130A0093FBED /* 9.png */,
 				52D0A3EB1CAB130A0093FBED /* 10.png */,
 				52D0A3EC1CAB130A0093FBED /* 11.png */,
 				52D0A3ED1CAB130A0093FBED /* 12.png */,
@@ -785,6 +787,7 @@
 				52D0A3F21CAB130A0093FBED /* 17.png */,
 				52D0A3F31CAB130A0093FBED /* 18.png */,
 				52D0A3F41CAB130A0093FBED /* 19.png */,
+				52D0A3E31CAB130A0093FBED /* 2.png */,
 				52D0A3F51CAB130A0093FBED /* 20.png */,
 				52D0A3F61CAB130A0093FBED /* 21.png */,
 				52D0A3F71CAB130A0093FBED /* 22.png */,
@@ -795,6 +798,7 @@
 				52D0A3FC1CAB130A0093FBED /* 27.png */,
 				52D0A38F1CAB11A00093FBED /* 28.png */,
 				52D0A3901CAB11A00093FBED /* 29.png */,
+				52D0A3E41CAB130A0093FBED /* 3.png */,
 				52D0A3911CAB11A00093FBED /* 30.png */,
 				52D0A3931CAB11A00093FBED /* 31.png */,
 				52D0A3951CAB11A00093FBED /* 32.png */,
@@ -805,6 +809,7 @@
 				52D0A39A1CAB11A00093FBED /* 37.png */,
 				52D0A39B1CAB11A00093FBED /* 38.png */,
 				52D0A39C1CAB11A00093FBED /* 39.png */,
+				52D0A3E51CAB130A0093FBED /* 4.png */,
 				52D0A39D1CAB11A00093FBED /* 40.png */,
 				52D0A39E1CAB11A00093FBED /* 41.png */,
 				52D0A39F1CAB11A00093FBED /* 42.png */,
@@ -815,13 +820,19 @@
 				52D0A3A41CAB11A00093FBED /* 47.png */,
 				52D0A3A51CAB11A00093FBED /* 48.png */,
 				52D0A3A61CAB11A00093FBED /* 49.png */,
+				52D0A3E61CAB130A0093FBED /* 5.png */,
 				52D0A3A71CAB11A00093FBED /* 50.png */,
 				52D0A3A81CAB11A00093FBED /* 51.png */,
 				52D0A3A91CAB11A00093FBED /* 52.png */,
 				52D0A3AA1CAB11A00093FBED /* 53.png */,
 				52D0A3FD1CAB130A0093FBED /* 54.png */,
+				52D0A3E71CAB130A0093FBED /* 6.png */,
+				52D0A3E81CAB130A0093FBED /* 7.png */,
+				52D0A3E91CAB130A0093FBED /* 8.png */,
+				52D0A3EA1CAB130A0093FBED /* 9.png */,
 			);
 			name = AnimalLineIcons;
+			path = AnimalLineIcons;
 			sourceTree = "<group>";
 		};
 		688162C05E42C87235AA5BCC /* Pods */ = {
@@ -1140,6 +1151,7 @@
 				523DA47C1ADC574B007F7F7D /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */ = {
@@ -1148,6 +1160,7 @@
 				52CC53351AAA4E8A002A51C1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1268,7 +1281,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IBC_WARNINGS = NO;
 				IBSC_WARNINGS = NO;
-				INFOPLIST_FILE = InTouch/Info.plist;
+				INFOPLIST_FILE = "Contact/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
@@ -1315,7 +1328,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				IBC_WARNINGS = NO;
 				IBSC_WARNINGS = NO;
-				INFOPLIST_FILE = InTouch/Info.plist;
+				INFOPLIST_FILE = "Contact/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
