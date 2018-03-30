@@ -37,8 +37,8 @@ class Constants {
 	
     struct LocalData {
         static let SELECTED_PERSON = "selectedPerson"
+		static let SELECTED_PERSON_INDEX = "selectedPersonIndex"
         static let SELECTED_CATCHUP_INDEX = "selectedCatchupIndex"
-        static let SELECTED_PERSON_INDEX = "selectedPersonIndex"
         static let DATE_FORMAT = "h:mm a, d MMM, yyyy" // e.g. 4:30 PM, 28 March
     }
 	

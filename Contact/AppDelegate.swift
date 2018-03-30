@@ -13,32 +13,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	/* MARK: Init
 	/////////////////////////////////////////// */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        UINavigationController().navigationBar.tintColor = UIColor.white
-
-        // Local notifications
-        let doneAction = UIMutableUserNotificationAction()
-        doneAction.identifier = Constants.LocalNotifications.DONE_ACTION_IDENTIFIER
-        doneAction.title = Constants.LocalNotifications.DONE_ACTION_TITLE
-        doneAction.activationMode = .background         // don't bring app to foreground
-        doneAction.isAuthenticationRequired = false       // don't require unlocking before performing action
-        doneAction.isDestructive = true                   // display action in red
-        
-        let remindAction = UIMutableUserNotificationAction()
-        remindAction.identifier = Constants.LocalNotifications.REMIND_ACTION_IDENTIFIER
-        remindAction.title = Constants.LocalNotifications.REMIND_ACTION_TITLE
-        remindAction.activationMode = .background
-        remindAction.isDestructive = false
-        
-        let actionCategory = UIMutableUserNotificationCategory()
-        actionCategory.identifier = Constants.LocalNotifications.ACTION_CATEGORY_IDENTIFIER
-        actionCategory.setActions([remindAction, doneAction], for: .default)     // 4 actions max
-        actionCategory.setActions([doneAction, remindAction], for: .minimal)     // for when space is limited - 2 actions max
-        
-        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: NSSet(array: [actionCategory]) as? Set<UIUserNotificationCategory>))
+		
+		// Styling
+		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+		UINavigationBar.appearance().shadowImage = UIImage()
+		UINavigationBar.appearance().isTranslucent = true
+		UINavigationBar.appearance().backgroundColor = .clear
+		UINavigationBar.appearance().tintColor = UIColor.white
+		UINavigationBar.appearance().titleTextAttributes = [
+			NSAttributedStringKey.foregroundColor : UIColor.white
+		]
+		window?.tintColor = UIColor.white
+		
+		// Local notifications
+		let doneAction = UIMutableUserNotificationAction()
+		doneAction.identifier = Constants.LocalNotifications.DONE_ACTION_IDENTIFIER
+		doneAction.title = Constants.LocalNotifications.DONE_ACTION_TITLE
+		doneAction.activationMode = .background          // don't bring app to foreground
+		doneAction.isAuthenticationRequired = false      // don't require unlocking before performing action
+		doneAction.isDestructive = true                 // display action in red
+		
+		let remindAction = UIMutableUserNotificationAction()
+		remindAction.identifier = Constants.LocalNotifications.REMIND_ACTION_IDENTIFIER
+		remindAction.title = Constants.LocalNotifications.REMIND_ACTION_TITLE
+		remindAction.activationMode = .background
+		remindAction.isDestructive = false
+		
+		let actionCategory = UIMutableUserNotificationCategory()
+		actionCategory.identifier = Constants.LocalNotifications.ACTION_CATEGORY_IDENTIFIER
+		actionCategory.setActions([remindAction, doneAction], for: .default)     // 4 actions max
+		actionCategory.setActions([doneAction, remindAction], for: .minimal)     // for when space is limited - 2 actions max
+		
+		application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: NSSet(array: [actionCategory]) as? Set<UIUserNotificationCategory>))
+		
+		// Purchases
+		Purchase.supportStorePurchase()
+		Purchase.completeTransactions()
+		
+		// Migration from old themes
+		let currentTheme = UserDefaults.standard.string(forKey: Constants.Purchases.CURRENT_THEME)
+		if currentTheme != Constants.Purchases.FIRE_THEME &&
+			currentTheme != Constants.Purchases.GRASSY_THEME &&
+			currentTheme != Constants.Purchases.LIFE_THEME &&
+			currentTheme != Constants.Purchases.MALIBU_THEME &&
+			currentTheme != Constants.Purchases.NIGHTLIGHT_THEME &&
+			currentTheme != Constants.Purchases.RIPE_THEME &&
+			currentTheme != Constants.Purchases.SALVATION_THEME &&
+			currentTheme != Constants.Purchases.SUNRISE_THEME {
+			UserDefaults.standard.set(Constants.Purchases.MALIBU_THEME, forKey: Constants.Purchases.CURRENT_THEME)
+		}
 
         return true
     }
