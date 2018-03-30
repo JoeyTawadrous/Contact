@@ -171,4 +171,3 @@ class PeopleTableViewCell : UITableViewCell {
     @IBOutlet var thumbnailImageView: UIImageView?
     @IBOutlet var outerCircleImageView: UIImageView?
 }
-

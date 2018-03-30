@@ -13,7 +13,6 @@
 		522422011D32915F000ED4BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522422001D32915F000ED4BC /* MessageUI.framework */; };
 		5235B8D91AD9582800B3BAE2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235B8D81AD9582800B3BAE2 /* Utils.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		523DA47D1ADC574B007F7F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523DA47B1ADC574B007F7F7D /* Main.storyboard */; };
-		523DA47F1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523DA47E1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift */; };
 		5264519A1AAF644F002C37A6 /* CatchUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526451991AAF644F002C37A6 /* CatchUps.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5264519C1AAF9194002C37A6 /* AddCatchUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264519B1AAF9194002C37A6 /* AddCatchUp.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		526880E5206EA76A005E88D8 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 526880E4206EA769005E88D8 /* Fonts */; };
@@ -21,31 +20,7 @@
 		526880E9206EA9EB005E88D8 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880E7206EA9EB005E88D8 /* Purchase.swift */; };
 		526880EC206EAE4C005E88D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880EA206EAE4B005E88D8 /* Settings.swift */; };
 		526880ED206EAE4C005E88D8 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880EB206EAE4B005E88D8 /* Themes.swift */; };
-		528B29131D3BF50600B43319 /* PushReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B29121D3BF50600B43319 /* PushReview.swift */; };
-		52B8A28C1AE17BA5005F8F95 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B8A2841AE17BA5005F8F95 /* ALView+PureLayout.m */; };
-		52B8A28D1AE17BA5005F8F95 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B8A2861AE17BA5005F8F95 /* NSArray+PureLayout.m */; };
-		52B8A28E1AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B8A2881AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.m */; };
 		52BB3EF51AE314BA00A12D0C /* CatchUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB3EF41AE314BA00A12D0C /* CatchUp.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
-		52C980DA1D314AD200F7E1B0 /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980BB1D314AD100F7E1B0 /* YALSpringAnimation.m */; };
-		52C980DB1D314AD200F7E1B0 /* CAAnimation+YALTabBarViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980C01D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.m */; };
-		52C980DC1D314AD200F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980C41D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */; };
-		52C980DD1D314AD200F7E1B0 /* YALAnimatingTabBarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980C71D314AD100F7E1B0 /* YALAnimatingTabBarConstants.m */; };
-		52C980DE1D314AD200F7E1B0 /* YALFoldingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980CB1D314AD100F7E1B0 /* YALFoldingTabBarController.m */; };
-		52C980DF1D314AD200F7E1B0 /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980CF1D314AD100F7E1B0 /* YALTabBarItem.m */; };
-		52C980E01D314AD200F7E1B0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C980D21D314AD200F7E1B0 /* Info.plist */; };
-		52C980E11D314AD200F7E1B0 /* YALCustomHeightTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980D61D314AD200F7E1B0 /* YALCustomHeightTabBar.m */; };
-		52C980E21D314AD200F7E1B0 /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C980D91D314AD200F7E1B0 /* YALFoldingTabBar.m */; };
-		52C980E31D314B5300F7E1B0 /* YALSpringAnimation.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980BA1D314AD100F7E1B0 /* YALSpringAnimation.h */; };
-		52C980E41D314B5300F7E1B0 /* CAAnimation+YALTabBarViewAnimations.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980BF1D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.h */; };
-		52C980E51D314B5300F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980C31D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.h */; };
-		52C980E61D314B5300F7E1B0 /* YALAnimatingTabBarConstants.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980C61D314AD100F7E1B0 /* YALAnimatingTabBarConstants.h */; };
-		52C980E71D314B5300F7E1B0 /* YALFoldingTabBarController.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980CA1D314AD100F7E1B0 /* YALFoldingTabBarController.h */; };
-		52C980E81D314B5300F7E1B0 /* YALTabBarItem.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980CE1D314AD100F7E1B0 /* YALTabBarItem.h */; };
-		52C980E91D314B5300F7E1B0 /* FoldingTabBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980D11D314AD200F7E1B0 /* FoldingTabBar.h */; };
-		52C980EA1D314B5300F7E1B0 /* YALCustomHeightTabBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980D51D314AD200F7E1B0 /* YALCustomHeightTabBar.h */; };
-		52C980EB1D314B5300F7E1B0 /* YALFoldingTabBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 52C980D81D314AD200F7E1B0 /* YALFoldingTabBar.h */; };
-		52C980EE1D315E9800F7E1B0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C980ED1D315E9800F7E1B0 /* Themes.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
-		52C980F01D315EA500F7E1B0 /* Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C980EF1D315EA500F7E1B0 /* Two.swift */; };
 		52CC53291AAA4E8A002A51C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		52CC532C1AAA4E8A002A51C1 /* Contact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52CC532A1AAA4E8A002A51C1 /* Contact.xcdatamodeld */; };
 		52CC532E1AAA4E8A002A51C1 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC532D1AAA4E8A002A51C1 /* People.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -62,7 +37,6 @@
 		522422001D32915F000ED4BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5235B8D81AD9582800B3BAE2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		523DA47C1ADC574B007F7F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		523DA47E1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDesignColorSwift.swift; sourceTree = "<group>"; };
 		526451991AAF644F002C37A6 /* CatchUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchUps.swift; sourceTree = "<group>"; };
 		5264519B1AAF9194002C37A6 /* AddCatchUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCatchUp.swift; sourceTree = "<group>"; };
 		526880E4206EA769005E88D8 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
@@ -70,38 +44,7 @@
 		526880E7206EA9EB005E88D8 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		526880EA206EAE4B005E88D8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		526880EB206EAE4B005E88D8 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
-		528B29121D3BF50600B43319 /* PushReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushReview.swift; sourceTree = "<group>"; };
-		52B8A2821AE17BA4005F8F95 /* InTouch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InTouch-Bridging-Header.h"; sourceTree = "<group>"; };
-		52B8A2831AE17BA5005F8F95 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
-		52B8A2841AE17BA5005F8F95 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
-		52B8A2851AE17BA5005F8F95 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		52B8A2861AE17BA5005F8F95 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		52B8A2871AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		52B8A2881AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		52B8A2891AE17BA5005F8F95 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
-		52B8A28A1AE17BA5005F8F95 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
-		52B8A28B1AE17BA5005F8F95 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		52BB3EF41AE314BA00A12D0C /* CatchUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchUp.swift; sourceTree = "<group>"; };
-		52C980BA1D314AD100F7E1B0 /* YALSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALSpringAnimation.h; sourceTree = "<group>"; };
-		52C980BB1D314AD100F7E1B0 /* YALSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALSpringAnimation.m; sourceTree = "<group>"; };
-		52C980BF1D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+YALTabBarViewAnimations.h"; sourceTree = "<group>"; };
-		52C980C01D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+YALTabBarViewAnimations.m"; sourceTree = "<group>"; };
-		52C980C31D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+TransactionWithAnimationsAndCompletion.h"; sourceTree = "<group>"; };
-		52C980C41D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+TransactionWithAnimationsAndCompletion.m"; sourceTree = "<group>"; };
-		52C980C61D314AD100F7E1B0 /* YALAnimatingTabBarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALAnimatingTabBarConstants.h; sourceTree = "<group>"; };
-		52C980C71D314AD100F7E1B0 /* YALAnimatingTabBarConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALAnimatingTabBarConstants.m; sourceTree = "<group>"; };
-		52C980CA1D314AD100F7E1B0 /* YALFoldingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBarController.h; sourceTree = "<group>"; };
-		52C980CB1D314AD100F7E1B0 /* YALFoldingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBarController.m; sourceTree = "<group>"; };
-		52C980CE1D314AD100F7E1B0 /* YALTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALTabBarItem.h; sourceTree = "<group>"; };
-		52C980CF1D314AD100F7E1B0 /* YALTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALTabBarItem.m; sourceTree = "<group>"; };
-		52C980D11D314AD200F7E1B0 /* FoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldingTabBar.h; sourceTree = "<group>"; };
-		52C980D21D314AD200F7E1B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52C980D51D314AD200F7E1B0 /* YALCustomHeightTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALCustomHeightTabBar.h; sourceTree = "<group>"; };
-		52C980D61D314AD200F7E1B0 /* YALCustomHeightTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALCustomHeightTabBar.m; sourceTree = "<group>"; };
-		52C980D81D314AD200F7E1B0 /* YALFoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBar.h; sourceTree = "<group>"; };
-		52C980D91D314AD200F7E1B0 /* YALFoldingTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBar.m; sourceTree = "<group>"; };
-		52C980ED1D315E9800F7E1B0 /* Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
-		52C980EF1D315EA500F7E1B0 /* Two.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Two.swift; sourceTree = "<group>"; };
 		52CC53231AAA4E8A002A51C1 /* Contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CC53271AAA4E8A002A51C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CC53281AAA4E8A002A51C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,196 +82,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		526451C81AB238C5002C37A6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				52C980B71D314AD100F7E1B0 /* FoldingTabBar */,
-				52B8A2811AE17B84005F8F95 /* PureLayout */,
-				523DA47E1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift */,
-				528B29121D3BF50600B43319 /* PushReview.swift */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		52B8A2811AE17B84005F8F95 /* PureLayout */ = {
-			isa = PBXGroup;
-			children = (
-				52B8A2831AE17BA5005F8F95 /* ALView+PureLayout.h */,
-				52B8A2841AE17BA5005F8F95 /* ALView+PureLayout.m */,
-				52B8A2821AE17BA4005F8F95 /* InTouch-Bridging-Header.h */,
-				52B8A2851AE17BA5005F8F95 /* NSArray+PureLayout.h */,
-				52B8A2861AE17BA5005F8F95 /* NSArray+PureLayout.m */,
-				52B8A2871AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.h */,
-				52B8A2881AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.m */,
-				52B8A2891AE17BA5005F8F95 /* PureLayout+Internal.h */,
-				52B8A28A1AE17BA5005F8F95 /* PureLayout.h */,
-				52B8A28B1AE17BA5005F8F95 /* PureLayoutDefines.h */,
-			);
-			path = PureLayout;
-			sourceTree = "<group>";
-		};
-		52C980B71D314AD100F7E1B0 /* FoldingTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				52C980B81D314AD100F7E1B0 /* Animation */,
-				52C980BC1D314AD100F7E1B0 /* Category */,
-				52C980C51D314AD100F7E1B0 /* Constants */,
-				52C980C81D314AD100F7E1B0 /* Controller */,
-				52C980CC1D314AD100F7E1B0 /* Model */,
-				52C980D01D314AD100F7E1B0 /* Resources */,
-				52C980D31D314AD200F7E1B0 /* View */,
-			);
-			path = FoldingTabBar;
-			sourceTree = "<group>";
-		};
-		52C980B81D314AD100F7E1B0 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				52C980B91D314AD100F7E1B0 /* YALSpringAnimation */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		52C980B91D314AD100F7E1B0 /* YALSpringAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				52C980BA1D314AD100F7E1B0 /* YALSpringAnimation.h */,
-				52C980BB1D314AD100F7E1B0 /* YALSpringAnimation.m */,
-			);
-			path = YALSpringAnimation;
-			sourceTree = "<group>";
-		};
-		52C980BC1D314AD100F7E1B0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				52C980BD1D314AD100F7E1B0 /* CAAnimation */,
-				52C980C11D314AD100F7E1B0 /* CATransaction */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		52C980BD1D314AD100F7E1B0 /* CAAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				52C980BE1D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations */,
-			);
-			path = CAAnimation;
-			sourceTree = "<group>";
-		};
-		52C980BE1D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations */ = {
-			isa = PBXGroup;
-			children = (
-				52C980BF1D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.h */,
-				52C980C01D314AD100F7E1B0 /* CAAnimation+YALTabBarViewAnimations.m */,
-			);
-			path = "CAAnimation+YALTabBarViewAnimations";
-			sourceTree = "<group>";
-		};
-		52C980C11D314AD100F7E1B0 /* CATransaction */ = {
-			isa = PBXGroup;
-			children = (
-				52C980C21D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion */,
-			);
-			path = CATransaction;
-			sourceTree = "<group>";
-		};
-		52C980C21D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion */ = {
-			isa = PBXGroup;
-			children = (
-				52C980C31D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.h */,
-				52C980C41D314AD100F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */,
-			);
-			path = "CATransaction+TransactionWithAnimationsAndCompletion";
-			sourceTree = "<group>";
-		};
-		52C980C51D314AD100F7E1B0 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				52C980C61D314AD100F7E1B0 /* YALAnimatingTabBarConstants.h */,
-				52C980C71D314AD100F7E1B0 /* YALAnimatingTabBarConstants.m */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		52C980C81D314AD100F7E1B0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				52C980C91D314AD100F7E1B0 /* FoldingTabBarController */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		52C980C91D314AD100F7E1B0 /* FoldingTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				52C980CA1D314AD100F7E1B0 /* YALFoldingTabBarController.h */,
-				52C980CB1D314AD100F7E1B0 /* YALFoldingTabBarController.m */,
-			);
-			path = FoldingTabBarController;
-			sourceTree = "<group>";
-		};
-		52C980CC1D314AD100F7E1B0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				52C980CD1D314AD100F7E1B0 /* TabBarItem */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		52C980CD1D314AD100F7E1B0 /* TabBarItem */ = {
-			isa = PBXGroup;
-			children = (
-				52C980CE1D314AD100F7E1B0 /* YALTabBarItem.h */,
-				52C980CF1D314AD100F7E1B0 /* YALTabBarItem.m */,
-			);
-			path = TabBarItem;
-			sourceTree = "<group>";
-		};
-		52C980D01D314AD100F7E1B0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				52C980D11D314AD200F7E1B0 /* FoldingTabBar.h */,
-				52C980D21D314AD200F7E1B0 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		52C980D31D314AD200F7E1B0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				52C980D41D314AD200F7E1B0 /* CustomHeightTabBar */,
-				52C980D71D314AD200F7E1B0 /* FoldingTabBar */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		52C980D41D314AD200F7E1B0 /* CustomHeightTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				52C980D51D314AD200F7E1B0 /* YALCustomHeightTabBar.h */,
-				52C980D61D314AD200F7E1B0 /* YALCustomHeightTabBar.m */,
-			);
-			path = CustomHeightTabBar;
-			sourceTree = "<group>";
-		};
-		52C980D71D314AD200F7E1B0 /* FoldingTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				52C980D81D314AD200F7E1B0 /* YALFoldingTabBar.h */,
-				52C980D91D314AD200F7E1B0 /* YALFoldingTabBar.m */,
-			);
-			path = FoldingTabBar;
-			sourceTree = "<group>";
-		};
-		52C980EC1D315E5400F7E1B0 /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				52C980ED1D315E9800F7E1B0 /* Themes.swift */,
-				52C980EF1D315EA500F7E1B0 /* Two.swift */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
 		52CC531A1AAA4E8A002A51C1 = {
 			isa = PBXGroup;
 			children = (
@@ -350,10 +103,8 @@
 		52CC53251AAA4E8A002A51C1 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				526451C81AB238C5002C37A6 /* Frameworks */,
 				A56D755768525FE3A608B124 /* Frameworks */,
 				52CC53261AAA4E8A002A51C1 /* Resources */,
-				52C980EC1D315E5400F7E1B0 /* Tabs */,
 				52618C441CA0725D003192AF /* Utils */,
 				523DA47B1ADC574B007F7F7D /* Main.storyboard */,
 				52CC53321AAA4E8A002A51C1 /* Images.xcassets */,
@@ -476,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				523DA47D1ADC574B007F7F7D /* Main.storyboard in Resources */,
-				52C980E01D314AD200F7E1B0 /* Info.plist in Resources */,
 				52CC53361AAA4E8A002A51C1 /* LaunchScreen.xib in Resources */,
 				526880E5206EA76A005E88D8 /* Fonts in Resources */,
 				52CC53331AAA4E8A002A51C1 /* Images.xcassets in Resources */,
@@ -550,42 +300,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C980E31D314B5300F7E1B0 /* YALSpringAnimation.h in Sources */,
-				52C980E41D314B5300F7E1B0 /* CAAnimation+YALTabBarViewAnimations.h in Sources */,
-				52C980E51D314B5300F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.h in Sources */,
-				52C980E61D314B5300F7E1B0 /* YALAnimatingTabBarConstants.h in Sources */,
-				52C980E71D314B5300F7E1B0 /* YALFoldingTabBarController.h in Sources */,
-				52C980E81D314B5300F7E1B0 /* YALTabBarItem.h in Sources */,
 				526880EC206EAE4C005E88D8 /* Settings.swift in Sources */,
 				526880E9206EA9EB005E88D8 /* Purchase.swift in Sources */,
-				52C980E91D314B5300F7E1B0 /* FoldingTabBar.h in Sources */,
-				52C980EA1D314B5300F7E1B0 /* YALCustomHeightTabBar.h in Sources */,
-				52C980EB1D314B5300F7E1B0 /* YALFoldingTabBar.h in Sources */,
-				52C980DF1D314AD200F7E1B0 /* YALTabBarItem.m in Sources */,
-				52B8A28D1AE17BA5005F8F95 /* NSArray+PureLayout.m in Sources */,
-				52C980E21D314AD200F7E1B0 /* YALFoldingTabBar.m in Sources */,
-				52C980EE1D315E9800F7E1B0 /* Themes.swift in Sources */,
 				5264519C1AAF9194002C37A6 /* AddCatchUp.swift in Sources */,
-				52C980DD1D314AD200F7E1B0 /* YALAnimatingTabBarConstants.m in Sources */,
 				5235B8D91AD9582800B3BAE2 /* Utils.swift in Sources */,
 				5264519A1AAF644F002C37A6 /* CatchUps.swift in Sources */,
 				52CC532E1AAA4E8A002A51C1 /* People.swift in Sources */,
 				52CC532C1AAA4E8A002A51C1 /* Contact.xcdatamodeld in Sources */,
-				52C980E11D314AD200F7E1B0 /* YALCustomHeightTabBar.m in Sources */,
-				52C980DC1D314AD200F7E1B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
-				52C980DA1D314AD200F7E1B0 /* YALSpringAnimation.m in Sources */,
 				526880ED206EAE4C005E88D8 /* Themes.swift in Sources */,
 				52BB3EF51AE314BA00A12D0C /* CatchUp.swift in Sources */,
-				52B8A28E1AE17BA5005F8F95 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				52CC53291AAA4E8A002A51C1 /* AppDelegate.swift in Sources */,
 				521706D11BAD779E007BCE73 /* Constants.swift in Sources */,
-				528B29131D3BF50600B43319 /* PushReview.swift in Sources */,
-				523DA47F1ADEF7C3007F7F7D /* MaterialDesignColorSwift.swift in Sources */,
-				52C980DE1D314AD200F7E1B0 /* YALFoldingTabBarController.m in Sources */,
-				52C980DB1D314AD200F7E1B0 /* CAAnimation+YALTabBarViewAnimations.m in Sources */,
 				526880E8206EA9EB005E88D8 /* Extensions.swift in Sources */,
-				52B8A28C1AE17BA5005F8F95 /* ALView+PureLayout.m in Sources */,
-				52C980F01D315EA500F7E1B0 /* Two.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

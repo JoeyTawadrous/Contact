@@ -40,11 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: NSSet(array: [actionCategory]) as? Set<UIUserNotificationCategory>))
 
-        // App reviews
-        PushReview.configureWithAppId(Constants.Commmon.APP_ID, appDelegate: self)
-        PushReview.registerNotificationSettings()
-        PushReview.usesBeforePresenting = 5
-
         return true
     }
     
