@@ -45,7 +45,7 @@ class Settings: UITableViewController, UITextFieldDelegate {
 	}
 	
 	@IBAction func reviewButtonPressed(sender: UIButton) {
-//		PushReview.reviewApp()
+		Utils.openURL(url: Constants.Common.APP_STORE_LINK)
 	}
 	
 	@IBAction func sendFeedbackButtonPressed() {
