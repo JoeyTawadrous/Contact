@@ -1,5 +1,6 @@
 import UIKit
 import CoreData
+import SCLAlertView
 
 
 class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -98,7 +99,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		var cell: PeopleTableViewCell! = tableView.dequeueReusableCell(withIdentifier: Constants.Common.CELL) as? PeopleTableViewCell
 		if cell == nil {
-			cell = GoalTableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: Constants.Common.CELL)
+			cell = PeopleTableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: Constants.Common.CELL)
 		}
 		let person = people[indexPath.row]
 		
@@ -106,10 +107,10 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		cell!.selectionStyle = .none
 		
 		let name = person.value(forKey: Constants.CoreData.NAME) as! String?
-		cell.nameLabel!.text = name
+		cell.personLabel!.text = name
 		
-		let catchups = Utils.fetchCoreDataObject(Constants.CoreData.TASK, predicate: name!)
-		cell.catchupCountLabel!.text = String(catchups.count)
+		let catchups = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: name!)
+		cell.catchUpCountLabel!.text = String(catchups.count)
 		
 		let thumbnail = person.value(forKey: Constants.CoreData.THUMBNAIL) as! String?
 		cell.thumbnailImageView!.image = UIImage(named: thumbnail!)
@@ -124,14 +125,14 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.delete) {
             
-			// Delete tasks associated with this goal
+			// Delete catchups associated with this goal
 			let catchups = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: "")
 			let person = people[indexPath.row]
 			let selectedPerson = person.value(forKey: Constants.CoreData.NAME) as! String?
 			
 			for catchup in catchups {
 				if (selectedPerson == catchup.name) {
-					Tasks.deleteTask(catchup as! NSManagedObject)
+					CatchUps.deleteCatchUp(catchup as! NSManagedObject)
 				}
 			}
 			
@@ -170,7 +171,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // Show CatchUps view
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
-        let catchUpsView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.CATCH_UPS) as! CatchUps
+        let catchUpsView = storyBoard.instantiateViewController(withIdentifier: Constants.Views.CATCH_UPS) as! CatchUps
         self.show(catchUpsView as UIViewController, sender: catchUpsView)
     }
 	
@@ -179,12 +180,12 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 	
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if goals.count == 0 {
+		if people.count == 0 {
 			let emptyView = UIView(frame: CGRect(x:0, y:0, width:self.view.bounds.size.width, height:self.view.bounds.size.height))
 			
 			let emptyImageView = UIImageView(frame: CGRect(x:0, y:0, width:150, height:150))
 			emptyImageView.center = CGPoint(x:self.view.frame.width / 2, y: self.view.bounds.size.height * 0.30)
-			let emptyImage = Utils.imageResize(UIImage(named: "Facebook")!, sizeChange: CGSize(width: 150, height: 150)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+			let emptyImage = Utils.imageResize(UIImage(named: "Other")!, sizeChange: CGSize(width: 150, height: 150)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 			emptyImageView.image = emptyImage
 			emptyImageView.tintColor = UIColor.white
 			emptyView.addSubview(emptyImageView)

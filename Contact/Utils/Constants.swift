@@ -67,7 +67,7 @@ class Constants {
 		static let FIRE_THEME = "fire"
 		
 		static let Colors: [String : [String]] = [
-			GRASSY_THEME: ["96e6a1", "d4fc79"],
+			GRASSY_THEME: ["009efd", "2af598"],
 			SUNRISE_THEME: ["f6d365", "fda085"],
 			NIGHTLIGHT_THEME: ["a18cd1", "fbc2eb"],
 			SALVATION_THEME: ["f43b47", "453a94"],

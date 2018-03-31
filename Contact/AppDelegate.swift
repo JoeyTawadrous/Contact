@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			currentTheme != Constants.Purchases.RIPE_THEME &&
 			currentTheme != Constants.Purchases.SALVATION_THEME &&
 			currentTheme != Constants.Purchases.SUNRISE_THEME {
-			UserDefaults.standard.set(Constants.Purchases.MALIBU_THEME, forKey: Constants.Purchases.CURRENT_THEME)
+			UserDefaults.standard.set(Constants.Purchases.GRASSY_THEME, forKey: Constants.Purchases.CURRENT_THEME)
 		}
 
         return true
@@ -77,10 +77,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if (notificationUUID == catchUpUUID) {
                 switch (identifier!) {
-                    case AppDelegate.LocalNotifications.DONE_ACTION_IDENTIFIER:
+                    case Constants.LocalNotifications.DONE_ACTION_IDENTIFIER:
                         CatchUps.deleteCatchUp(catchUp as! NSManagedObject)
-                    case AppDelegate.LocalNotifications.REMIND_ACTION_IDENTIFIER:
-                        CatchUps.scheduleReminder(catchUp as! NSManagedObject)
+                    case Constants.LocalNotifications.REMIND_ACTION_IDENTIFIER:
+                        Utils.scheduleReminder(catchUp as! NSManagedObject)
                     default: // switch statements must be exhaustive - this condition should never be met
                         print("Error: unexpected notification action identifier!")
                 }

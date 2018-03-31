@@ -41,7 +41,7 @@
         <!--Add CatchUp-->
         <scene sceneID="SWi-t4-jNm">
             <objects>
-                <tableViewController storyboardIdentifier="AddCatchUp" id="tkq-8c-ba1" customClass="AddCatchUp" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddCatchUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tkq-8c-ba1" customClass="AddCatchUp" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LPw-vV-Yqy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
         <!--Catch Up-->
         <scene sceneID="1dy-LX-dDn">
             <objects>
-                <viewController storyboardIdentifier="CatchUp" id="vv8-WK-YSn" customClass="CatchUp" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatchUp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vv8-WK-YSn" customClass="CatchUp" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vXy-iM-VCs"/>
                         <viewControllerLayoutGuide type="bottom" id="qVH-N7-J5p"/>
@@ -178,11 +178,11 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Text Message @ 5:15pm" id="0VP-qW-eJe"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="catchUpImageView" destination="HP0-Cg-fTw" id="o1Q-kt-Vpm"/>
                         <outlet property="dateLabel" destination="ULa-lJ-Rwf" id="tc4-yf-j4M"/>
-                        <outlet property="goalImageView" destination="t73-bq-h3n" id="J8g-XV-1IM"/>
                         <outlet property="markDoneButton" destination="gVO-1r-MkF" id="WWM-10-3oj"/>
+                        <outlet property="personImageView" destination="t73-bq-h3n" id="klv-zP-vzr"/>
                         <outlet property="reasonLabel" destination="S17-1F-slo" id="ewI-Xw-FYM"/>
-                        <outlet property="taskImageView" destination="HP0-Cg-fTw" id="KEf-5p-nHF"/>
                         <outlet property="timeLabel" destination="VlX-7X-JBU" id="ZAm-9G-rSR"/>
                         <outlet property="titleButton" destination="0VP-qW-eJe" id="AMl-bH-IbE"/>
                         <outlet property="typeLabel" destination="TPH-vp-D0y" id="MAY-R7-TnR"/>
@@ -195,7 +195,7 @@
         <!--People-->
         <scene sceneID="53f-J2-r3s">
             <objects>
-                <viewController storyboardIdentifier="People" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="lef-Ha-RCf" customClass="People" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="People" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lef-Ha-RCf" customClass="People" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b39-dc-ZbZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Ebn-Ti-aXx"/>
@@ -209,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="74" id="qPQ-Pl-XyM" customClass="GoalTableViewCell" customModule="Contact" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="74" id="qPQ-Pl-XyM" customClass="PeopleTableViewCell" customModule="Contact" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qPQ-Pl-XyM" id="HJk-5c-fA9">
@@ -260,9 +260,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="wae-j3-id6" id="Hbh-Pn-dSf"/>
-                                            <outlet property="taskCountLabel" destination="XFi-j1-UbB" id="7iH-7M-11W"/>
-                                            <outlet property="thumbnailImageView" destination="Pn9-9i-aba" id="UD5-yG-oSa"/>
+                                            <outlet property="catchUpCountLabel" destination="XFi-j1-UbB" id="rvr-lI-fMB"/>
+                                            <outlet property="personLabel" destination="wae-j3-id6" id="kdH-JY-kL4"/>
+                                            <outlet property="thumbnailImageView" destination="Pn9-9i-aba" id="bLl-s1-hOK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -277,12 +277,12 @@
                     <navigationItem key="navigationItem" title="People" id="ljM-Az-CBg">
                         <barButtonItem key="leftBarButtonItem" width="15" style="done" id="yPi-dk-pNF">
                             <connections>
-                                <action selector="menuButtonPressed:" destination="lef-Ha-RCf" id="cKX-Ia-MMt"/>
+                                <action selector="menuButtonPressed:" destination="lef-Ha-RCf" id="tQK-We-cyh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" width="15" style="done" id="WeT-78-ZSP">
                             <connections>
-                                <action selector="addGoal:" destination="lef-Ha-RCf" id="DeN-j7-7JU"/>
+                                <action selector="addPerson:" destination="lef-Ha-RCf" id="56T-Oz-HIe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -339,7 +339,7 @@
         <!--CatchUps-->
         <scene sceneID="ntS-Q4-DDa">
             <objects>
-                <viewController storyboardIdentifier="CatchUps" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ZdJ-EV-o1u" customClass="CatchUps" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatchUps" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZdJ-EV-o1u" customClass="CatchUps" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L77-HL-6tV"/>
                         <viewControllerLayoutGuide type="bottom" id="Rbf-Gc-8s4"/>
@@ -353,7 +353,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="74" id="wbd-de-AZE" customClass="TasksTableViewCell" customModule="Contact" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="74" id="wbd-de-AZE" customClass="CatchUpsTableViewCell" customModule="Contact" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wbd-de-AZE" id="Fv6-Og-FBW">
@@ -385,8 +385,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="reasonLabel" destination="9Dj-mz-2bI" id="z58-wo-vOq"/>
-                                            <outlet property="thumbnailImageView" destination="nn7-xx-G22" id="KhC-of-dNd"/>
+                                            <outlet property="reasonLabel" destination="9Dj-mz-2bI" id="g4G-my-0zT"/>
+                                            <outlet property="thumbnailImageView" destination="nn7-xx-G22" id="jm1-Iu-t2x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

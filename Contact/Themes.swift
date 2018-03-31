@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import CoreData
 import SwiftyStoreKit
+import FontAwesome_swift
 
 
 class Themes: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -70,7 +71,7 @@ class Themes: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		else {
 			let purchasedProducts = UserDefaults.standard.object(forKey: Constants.Purchases.PURCHASED_PRODUCTS) as? [String] ?? [String]()
 			
-			if theme != Constants.Purchases.MALIBU_THEME && !purchasedProducts.contains((theme)) {
+			if theme != Constants.Purchases.GRASSY_THEME && !purchasedProducts.contains((theme)) {
 				SwiftyStoreKit.purchaseProduct(Constants.Purchases.PRODUCT_ID_PREFIX + theme, atomically: true) { result in
 					Purchase.handlePurchaseResult(result, view: self, purchasedItem: theme)
 				}

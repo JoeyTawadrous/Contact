@@ -18,7 +18,7 @@ class Utils {
 			return Constants.Purchases.Colors[currentTheme!]!
 		}
 		else {
-			return Constants.Purchases.Colors[Constants.Purchases.MALIBU_THEME]!
+			return Constants.Purchases.Colors[Constants.Purchases.GRASSY_THEME]!
 		}
 	}
 	

@@ -45,7 +45,7 @@ class Settings: UITableViewController, UITextFieldDelegate {
 	}
 	
 	@IBAction func reviewButtonPressed(sender: UIButton) {
-		PushReview.reviewApp()
+//		PushReview.reviewApp()
 	}
 	
 	@IBAction func sendFeedbackButtonPressed() {

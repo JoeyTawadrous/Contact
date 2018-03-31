@@ -35,7 +35,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		addButton.title = String.fontAwesomeIcon(name: .plus)
 		
 		// Observer for every notification received
-		NotificationCenter.default.addObserver(self, selector: #selector(Tasks.backgoundNofification(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
+		NotificationCenter.default.addObserver(self, selector: #selector(CatchUps.backgoundNofification(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
     }
 	
 	override var prefersStatusBarHidden: Bool {
@@ -50,7 +50,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		selectedPerson = UserDefaults.standard.string(forKey: Constants.LocalData.SELECTED_PERSON)!
 		self.title = selectedPerson
 		
-		catchUps = Utils.fetchCoreDataObject(Constants.CoreData.TASK, predicate: selectedPerson)
+		catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
 		catchUps = catchUps.reversed() // newest first
 		
 		self.tableView.reloadData()
@@ -118,9 +118,9 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		var cell: CatchUpsTableViewCell! = tableView.dequeueReusableCell(withIdentifier: Constants.Common.CELL) as? CatchUpsTableViewCell
 		if cell == nil {
-			cell = TasksTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Constants.Common.CELL)
+			cell = CatchUpsTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Constants.Common.CELL)
 		}
-		let tasks = self.tasks[indexPath.row]
+		let tasks = self.catchUps[indexPath.row]
 		let type = tasks.value(forKey: Constants.CoreData.TYPE) as! String?
 		
 		// Style
@@ -141,7 +141,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .default, title: "Mark Done") {action in
+		let deleteAction = UITableViewRowAction(style: .default, title: "Mark Done") {_,_ in
             let catchUp = self.catchUps[indexPath.row] as! NSManagedObject
             CatchUps.deleteCatchUp(catchUp)
 			
@@ -150,7 +150,6 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.catchUps = self.catchUps.reversed() // newest first
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.backgroundColor = Utils.getNextTableColour(self.catchUps.count, reverse: false)
             tableView.reloadData()
         }
         
@@ -166,7 +165,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
         // Show CatchUp view
         let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
-        let catchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Classes.CATCH_UP) as! CatchUp
+        let catchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Views.CATCH_UP) as! CatchUp
         self.show(catchUpView as UIViewController, sender: catchUpView)
     }
 
@@ -175,12 +174,12 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if tasks.count == 0 {
+		if catchUps.count == 0 {
 			let emptyView = UIView(frame: CGRect(x:0, y:0, width:self.view.bounds.size.width, height:self.view.bounds.size.height))
 			
 			let emptyImageView = UIImageView(frame: CGRect(x:0, y:0, width:150, height:150))
 			emptyImageView.center = CGPoint(x:self.view.frame.width / 2, y: self.view.bounds.size.height * 0.30)
-			let emptyImage = Utils.imageResize(UIImage(named: "Fitness")!, sizeChange: CGSize(width: 150, height: 150)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+			let emptyImage = Utils.imageResize(UIImage(named: "Phone Call")!, sizeChange: CGSize(width: 150, height: 150)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 			emptyImageView.image = emptyImage
 			emptyImageView.tintColor = UIColor.white
 			emptyView.addSubview(emptyImageView)

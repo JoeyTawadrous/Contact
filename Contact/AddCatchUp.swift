@@ -1,6 +1,7 @@
 import UIKit
 import CoreData
 import SwiftForms
+import FontAwesome_swift
 
 
 class AddCatchUp: FormViewController {
@@ -46,8 +47,8 @@ class AddCatchUp: FormViewController {
 	/* MARK: Init
 	/////////////////////////////////////////// */
     override func viewDidLoad() {
-		selectedGoal = UserDefaults.standard.string(forKey: Constants.LocalData.SELECTED_GOAL)!
-		Utils.fetchCoreDataObject(Constants.CoreData.TASK, predicate: selectedGoal)
+		selectedPerson = UserDefaults.standard.string(forKey: Constants.LocalData.SELECTED_PERSON)!
+		Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
 		
 		// Styling
 		Utils.insertGradientIntoTableView(viewController: self, tableView: self.tableView)

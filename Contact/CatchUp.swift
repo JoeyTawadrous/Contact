@@ -1,12 +1,13 @@
 import Foundation
 import CoreData
+import UIKit
 
 
 class CatchUp: UIViewController {
     
     @IBOutlet var titleButton: UIBarButtonItem?
     @IBOutlet var reasonLabel: UILabel?
-    @IBOutlet var personThumbnail: UIImageView?
+    @IBOutlet var personImageView: UIImageView?
     @IBOutlet var dateLabel: UILabel?
     @IBOutlet var timeLabel: UILabel?
     @IBOutlet var typeLabel: UILabel?
@@ -19,14 +20,14 @@ class CatchUp: UIViewController {
 	/////////////////////////////////////////// */
     override func viewWillAppear(_ animated: Bool) {
 		let defaults = UserDefaults.standard
-		var people = Utils.fetchCoreDataObject(Constants.CoreData.PEOPLE, predicate: "")
+		var people = Utils.fetchCoreDataObject(Constants.CoreData.PERSON, predicate: "")
 		people = people.reversed()
 		
 		let selectedPerson = defaults.string(forKey: Constants.LocalData.SELECTED_PERSON)!
 		let selectedPersonIndex = defaults.integer(forKey: Constants.LocalData.SELECTED_PERSON_INDEX)
 		let selectedCatchUpIndex = defaults.integer(forKey: Constants.LocalData.SELECTED_CATCHUP_INDEX)
-		var tasks = Utils.fetchCoreDataObject(Constants.CoreData.TASK, predicate: selectedPerson)
-		tasks = tasks.reversed()
+		var catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
+		catchUps = catchUps.reversed()
 		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
@@ -39,11 +40,11 @@ class CatchUp: UIViewController {
 		
         // Person thumbnail
         let thumbnailFile = people[selectedPersonIndex].value(forKey: Constants.CoreData.THUMBNAIL) as! String?
-		goalImageView!.image = UIImage(named: thumbnailFile!)
-		goalImageView!.image! = Utils.imageResize(goalImageView!.image!, sizeChange: CGSize(width: 45, height: 45)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-		goalImageView!.tintColor = UIColor.white
-		goalImageView!.addBorderLeft(size: borderWidth, color: UIColor.white)
-		goalImageView!.addBorderRight(size: borderWidth, color: UIColor.white)
+		personImageView!.image = UIImage(named: thumbnailFile!)
+		personImageView!.image! = Utils.imageResize(personImageView!.image!, sizeChange: CGSize(width: 45, height: 45)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+		personImageView!.tintColor = UIColor.white
+		personImageView!.addBorderLeft(size: borderWidth, color: UIColor.white)
+		personImageView!.addBorderRight(size: borderWidth, color: UIColor.white)
 		
         // Date label
         let when = catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.WHEN) as! Date?
@@ -51,7 +52,7 @@ class CatchUp: UIViewController {
         dateFormatter.dateFormat = Constants.LocalData.DATE_FORMAT
         let formattedWhen = dateFormatter.string(from: when!)
         let whenArray = formattedWhen.characters.split{$0 == ","}.map(String.init)
-        dateLabel?.text = getDayOfWeek(formattedWhen)! + ", " + whenArray[1]
+        dateLabel?.text = Utils.getDayOfWeek(formattedWhen)! + ", " + whenArray[1]
 		dateLabel?.addBorderBottom(size: borderWidth, color: UIColor.white)
 		dateLabel?.addBorderRight(size: borderWidth, color: UIColor.white)
 		
@@ -67,7 +68,7 @@ class CatchUp: UIViewController {
 		
         // Type thumbnail
 		catchUpImageView!.image = UIImage(named: type!)
-		catchUpImageView!.image! = Utils.imageResize(taskImageView!.image!, sizeChange: CGSize(width: 40, height: 40)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+		catchUpImageView!.image! = Utils.imageResize(catchUpImageView!.image!, sizeChange: CGSize(width: 40, height: 40)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 		catchUpImageView!.tintColor = UIColor.white
 		catchUpImageView?.addBorderBottom(size: borderWidth, color: UIColor.white)
 		catchUpImageView?.addBorderRight(size: borderWidth, color: UIColor.white)
