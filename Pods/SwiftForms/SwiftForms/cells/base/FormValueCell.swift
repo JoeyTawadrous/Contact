@@ -23,6 +23,8 @@ open class FormValueCell: FormBaseCell {
     
     open override func configure() {
         super.configure()
+		
+		selectionStyle = .none
         
         accessoryType = .disclosureIndicator
         
@@ -36,7 +38,6 @@ open class FormValueCell: FormBaseCell {
         titleLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         valueLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         
-        valueLabel.textColor = UIColor.lightGray
         valueLabel.textAlignment = .right
         
         contentView.addSubview(titleLabel)
