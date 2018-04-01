@@ -33,7 +33,7 @@ Sometimes it's difficult to meet people that you genuinely connect with. Keep in
 
 
 <img alt="Screenshot" width="205px" src="readme_assets/1.png"><img alt="Screenshot2" width="205px" src="readme_assets/2.png"><img alt="Screenshot3" width="205px" src="readme_assets/3.png">
-<img alt="Screenshot" width="205px" src="readme_assets/1_ipad.png"><img alt="Screenshot2" width="205px" src="readme_assets/2_ipad.png"><img alt="Screenshot3" width="205px" src="readme_assets/3_ipad.png">
+<br><img alt="Screenshot" width="205px" src="readme_assets/1_ipad.png"><img alt="Screenshot2" width="205px" src="readme_assets/2_ipad.png"><img alt="Screenshot3" width="205px" src="readme_assets/3_ipad.png">
 
 
 # Tags
