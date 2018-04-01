@@ -28,6 +28,10 @@ open class FormValueCell: FormBaseCell {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
+		
+		// JOEY
+		titleLabel.textColor = UIColor.white
+		valueLabel.textColor = UIColor.white
         
         titleLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         valueLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)

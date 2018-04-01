@@ -97,13 +97,7 @@ class AddCatchUp: FormViewController {
 		if whenValue == nil { whenValue = tomorrow }
 		if reasonValue == nil { reasonValue = FormPlaceholders.REASON_WHEN_NIL as NSObject? }
 		
-		let catchUp = Utils.createObject(Constants.CoreData.CATCHUP)
-		catchUp.setValue(selectedPerson, forKey: Constants.CoreData.NAME)
-		catchUp.setValue(typeValue, forKey: Constants.CoreData.TYPE)
-		catchUp.setValue(whenValue, forKey: Constants.CoreData.WHEN)
-		catchUp.setValue(reasonValue, forKey: Constants.CoreData.REASON)
-		catchUp.setValue(uuid, forKey: Constants.CoreData.UUID);
-		Utils.saveObject()
+		Utils.createCatchUp(personName: selectedPerson, type: typeValue!, when: whenValue!, reason: reasonValue!)
 		
 		// Create local notification
 		let notification = UILocalNotification()

@@ -6,18 +6,35 @@
 	<dict>
 		<key>Contact.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+		<key>ContactUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>525920C02070470400794092</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>52CC53221AAA4E8A002A51C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>52CC533A1AAA4E8A002A51C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52FE252820703A27002095BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

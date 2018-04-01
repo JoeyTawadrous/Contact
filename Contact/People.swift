@@ -26,6 +26,11 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		people = people.reversed() // newest first
 		tableView.reloadData()
 		
+		// Demo data
+		if people.count == 0 {
+			people = Utils.createDemoData()
+		}
+		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
 		tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -63,7 +68,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		alertView.addButton(Constants.Common.SUBMIT) {
 			if !textField.text!.isEmpty {
-				self.savePerson(textField.text!, thumbnail: Utils.getRandomImageString())
+				self.people.insert(Utils.createPerson(name: textField.text!), at: 0)
 				self.tableView.reloadData()
 			}
 		}
@@ -77,20 +82,6 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let settingsView = storyBoard.instantiateViewController(withIdentifier: Constants.Views.SETTINGS) as! Settings
 		self.show(settingsView as UIViewController, sender: settingsView)
 	}
-    
-	
-	
-	/* MARK: Core Functionality
-	/////////////////////////////////////////// */
-    func savePerson(_ name: String, thumbnail: String) {
-        let person = Utils.createObject(Constants.CoreData.PERSON)
-        
-        person.setValue(name, forKey: Constants.CoreData.NAME)
-        person.setValue(thumbnail, forKey: Constants.CoreData.THUMBNAIL)
-        Utils.saveObject()
-        
-        people.insert(person, at: 0)
-    }
 	
 	
 	

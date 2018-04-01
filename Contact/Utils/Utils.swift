@@ -69,6 +69,53 @@ class Utils {
 	
 	/* MARK: Core Data
 	/////////////////////////////////////////// */
+	class func createDemoData() -> [AnyObject] {
+		var people = [AnyObject]()
+		let person1Name = "Mom & Dad"
+		let person2Name = "Boss at Work"
+		let person3Name = "Travel Agent"
+		let person4Name = "Insurance Company"
+		let person5Name = "Cousin Andy"
+		
+		people.insert(Utils.createPerson(name: person1Name), at: 0)
+		people.insert(Utils.createPerson(name: person2Name), at: 0)
+		people.insert(Utils.createPerson(name: person3Name), at: 0)
+		people.insert(Utils.createPerson(name: person4Name), at: 0)
+		people.insert(Utils.createPerson(name: person5Name), at: 0)
+		
+		Utils.createCatchUp(personName: person1Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person1Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person1Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person2Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person3Name, type: "Text Message" as AnyObject, when: Date(), reason: "Send top 5 destinations" as AnyObject)
+		Utils.createCatchUp(personName: person3Name, type: "Linkedin" as AnyObject, when: Date(), reason: "Share holiday groups" as AnyObject)
+		Utils.createCatchUp(personName: person3Name, type: "Twitter" as AnyObject, when: Date(), reason: "Tweet favourite beach images" as AnyObject)
+		Utils.createCatchUp(personName: person3Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Agree on destination & price" as AnyObject)
+		Utils.createCatchUp(personName: person4Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person4Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		Utils.createCatchUp(personName: person5Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
+		
+		return people
+	}
+	
+	class func createPerson(name: String) -> AnyObject {
+		let person = Utils.createObject(Constants.CoreData.PERSON)
+		person.setValue(name, forKey: Constants.CoreData.NAME)
+		person.setValue(Utils.getRandomImageString(), forKey: Constants.CoreData.THUMBNAIL)
+		Utils.saveObject()
+		return person
+	}
+	
+	class func createCatchUp(personName: String, type: AnyObject, when: Date, reason: AnyObject) {
+		let catchUp = Utils.createObject(Constants.CoreData.CATCHUP)
+		catchUp.setValue(personName, forKey: Constants.CoreData.NAME)
+		catchUp.setValue(type, forKey: Constants.CoreData.TYPE)
+		catchUp.setValue(when, forKey: Constants.CoreData.WHEN)
+		catchUp.setValue(reason, forKey: Constants.CoreData.REASON)
+		catchUp.setValue(UUID().uuidString, forKey: Constants.CoreData.UUID);
+		Utils.saveObject()
+	}
+	
 	class func createObject(_ type: String) -> NSManagedObject {
 		let entity = NSEntityDescription.entity(forEntityName: type, in: fetchManagedObjectContext())
 		let object = NSManagedObject(entity: entity!, insertInto:fetchManagedObjectContext())
