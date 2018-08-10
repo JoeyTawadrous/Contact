@@ -63,7 +63,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		)
 		
 		let alertView = SCLAlertView(appearance: appearance)
-		let alertViewIcon = UIImage(named: Constants.Design.ICON_TROPHY)
+		let alertViewIcon = UIImage(named: "trophy")
 		let textField = alertView.addTextField(ClassConstants.ADD_PERSON_NAME)
 		
 		alertView.addButton(Constants.Common.SUBMIT) {

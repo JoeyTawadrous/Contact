@@ -11,11 +11,14 @@
 		521706D11BAD779E007BCE73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521706D01BAD779E007BCE73 /* Constants.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5235B8D91AD9582800B3BAE2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5235B8D81AD9582800B3BAE2 /* Utils.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		523DA47D1ADC574B007F7F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523DA47B1ADC574B007F7F7D /* Main.storyboard */; };
+		524E3028211E2AE1009F7055 /* GothamProMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524E3024211E2AD7009F7055 /* GothamProMedium.ttf */; };
+		524E3029211E2AE1009F7055 /* GothamProBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524E3025211E2AD9009F7055 /* GothamProBlack.ttf */; };
+		524E302A211E2AE1009F7055 /* GothamProRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524E3026211E2ADB009F7055 /* GothamProRegular.ttf */; };
+		524E302B211E2AE1009F7055 /* GothamProBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 524E3027211E2ADE009F7055 /* GothamProBold.ttf */; };
 		525920C42070470500794092 /* ContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525920C32070470500794092 /* ContactUITests.swift */; };
 		525920D62070479000794092 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525920D42070479000794092 /* SnapshotHelper.swift */; };
 		5264519A1AAF644F002C37A6 /* CatchUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526451991AAF644F002C37A6 /* CatchUps.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5264519C1AAF9194002C37A6 /* AddCatchUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264519B1AAF9194002C37A6 /* AddCatchUp.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
-		526880E5206EA76A005E88D8 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 526880E4206EA769005E88D8 /* Fonts */; };
 		526880E8206EA9EB005E88D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880E6206EA9EB005E88D8 /* Extensions.swift */; };
 		526880E9206EA9EB005E88D8 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880E7206EA9EB005E88D8 /* Purchase.swift */; };
 		526880EC206EAE4C005E88D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526880EA206EAE4B005E88D8 /* Settings.swift */; };
@@ -47,13 +50,16 @@
 		521706D01BAD779E007BCE73 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5235B8D81AD9582800B3BAE2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		523DA47C1ADC574B007F7F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		524E3024211E2AD7009F7055 /* GothamProMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamProMedium.ttf; sourceTree = "<group>"; };
+		524E3025211E2AD9009F7055 /* GothamProBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamProBlack.ttf; sourceTree = "<group>"; };
+		524E3026211E2ADB009F7055 /* GothamProRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamProRegular.ttf; sourceTree = "<group>"; };
+		524E3027211E2ADE009F7055 /* GothamProBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamProBold.ttf; sourceTree = "<group>"; };
 		525920C12070470400794092 /* ContactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		525920C32070470500794092 /* ContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUITests.swift; sourceTree = "<group>"; };
 		525920C52070470500794092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		525920D42070479000794092 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ContactUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		526451991AAF644F002C37A6 /* CatchUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchUps.swift; sourceTree = "<group>"; };
 		5264519B1AAF9194002C37A6 /* AddCatchUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCatchUp.swift; sourceTree = "<group>"; };
-		526880E4206EA769005E88D8 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		526880E6206EA9EB005E88D8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		526880E7206EA9EB005E88D8 /* Purchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		526880EA206EAE4B005E88D8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -104,6 +110,17 @@
 				CDD6D5B3F5A34B8B47E5584A /* Pods_Contact.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		524E302C211E2AE5009F7055 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				524E3025211E2AD9009F7055 /* GothamProBlack.ttf */,
+				524E3027211E2ADE009F7055 /* GothamProBold.ttf */,
+				524E3024211E2AD7009F7055 /* GothamProMedium.ttf */,
+				524E3026211E2ADB009F7055 /* GothamProRegular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		525920C22070470500794092 /* ContactUITests */ = {
@@ -170,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				52CC532A1AAA4E8A002A51C1 /* Contact.xcdatamodeld */,
-				526880E4206EA769005E88D8 /* Fonts */,
+				524E302C211E2AE5009F7055 /* Fonts */,
 				52CC53271AAA4E8A002A51C1 /* Info.plist */,
 				52CC53341AAA4E8A002A51C1 /* LaunchScreen.xib */,
 			);
@@ -300,9 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				523DA47D1ADC574B007F7F7D /* Main.storyboard in Resources */,
+				524E3028211E2AE1009F7055 /* GothamProMedium.ttf in Resources */,
+				524E302B211E2AE1009F7055 /* GothamProBold.ttf in Resources */,
+				524E3029211E2AE1009F7055 /* GothamProBlack.ttf in Resources */,
 				52CC53361AAA4E8A002A51C1 /* LaunchScreen.xib in Resources */,
-				526880E5206EA76A005E88D8 /* Fonts in Resources */,
 				52CC53331AAA4E8A002A51C1 /* Images.xcassets in Resources */,
+				524E302A211E2AE1009F7055 /* GothamProRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
