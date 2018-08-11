@@ -89,7 +89,7 @@ class Utils {
 		Utils.createCatchUp(personName: person2Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
 		Utils.createCatchUp(personName: person3Name, type: "Text Message" as AnyObject, when: Date(), reason: "Send top 5 destinations" as AnyObject)
 		Utils.createCatchUp(personName: person3Name, type: "Linkedin" as AnyObject, when: Date(), reason: "Share holiday groups" as AnyObject)
-		Utils.createCatchUp(personName: person3Name, type: "Twitter" as AnyObject, when: Date(), reason: "Tweet favourite beach images" as AnyObject)
+		Utils.createCatchUp(personName: person3Name, type: "Twitter" as AnyObject, when: Date(), reason: "Tweet favourite images" as AnyObject)
 		Utils.createCatchUp(personName: person3Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Agree on destination & price" as AnyObject)
 		Utils.createCatchUp(personName: person4Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
 		Utils.createCatchUp(personName: person4Name, type: "Phone Call" as AnyObject, when: Date(), reason: "Discuss Financials" as AnyObject)
