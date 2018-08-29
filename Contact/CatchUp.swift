@@ -31,20 +31,15 @@ class CatchUp: UIViewController {
 		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
-		let borderWidth = CGFloat(3.5)
 		
         // Reason label
-        reasonLabel?.text = catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.REASON) as! String?
-        reasonLabel!.layer.borderWidth = borderWidth
-        reasonLabel!.layer.borderColor = UIColor.white.cgColor
+        reasonLabel?.text = "\"" + (catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.REASON) as! String?)! + "\""
 		
         // Person thumbnail
         let thumbnailFile = people[selectedPersonIndex].value(forKey: Constants.CoreData.THUMBNAIL) as! String?
 		personImageView!.image = UIImage(named: thumbnailFile!)
 		personImageView!.image! = Utils.imageResize(personImageView!.image!, sizeChange: CGSize(width: 45, height: 45)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 		personImageView!.tintColor = UIColor.white
-		personImageView!.addBorderLeft(size: borderWidth, color: UIColor.white)
-		personImageView!.addBorderRight(size: borderWidth, color: UIColor.white)
 		
         // Date label
         let when = catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.WHEN) as! Date?
@@ -53,25 +48,18 @@ class CatchUp: UIViewController {
         let formattedWhen = dateFormatter.string(from: when!)
         let whenArray = formattedWhen.characters.split{$0 == ","}.map(String.init)
         dateLabel?.text = Utils.getDayOfWeek(formattedWhen)! + ", " + whenArray[1]
-		dateLabel?.addBorderBottom(size: borderWidth, color: UIColor.white)
-		dateLabel?.addBorderRight(size: borderWidth, color: UIColor.white)
 		
         // Time label
         timeLabel?.text = whenArray[0]
-		timeLabel?.addBorderRight(size: borderWidth, color: UIColor.white)
 		
         // Type label
         let type = catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.TYPE) as! String?
         typeLabel?.text = type!.uppercased()
-		typeLabel!.layer.borderWidth = borderWidth;
-		typeLabel!.layer.borderColor = UIColor.white.cgColor
 		
         // Type thumbnail
 		catchUpImageView!.image = UIImage(named: type!)
 		catchUpImageView!.image! = Utils.imageResize(catchUpImageView!.image!, sizeChange: CGSize(width: 40, height: 40)).withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 		catchUpImageView!.tintColor = UIColor.white
-		catchUpImageView?.addBorderBottom(size: borderWidth, color: UIColor.white)
-		catchUpImageView?.addBorderRight(size: borderWidth, color: UIColor.white)
 		
         // Title bar button
 		titleButton?.title = Utils.getDayOfWeek(formattedWhen)! + ", " + whenArray[1] + " @ " + whenArray[0]
