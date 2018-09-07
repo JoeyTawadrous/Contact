@@ -327,7 +327,7 @@
         <!--Main-->
         <scene sceneID="hiy-oE-Vdc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EVb-1J-MTr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PeopleNavController" automaticallyAdjustsScrollViewInsets="NO" id="EVb-1J-MTr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" id="QvQ-gh-dDQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gE6-Ek-GS4">
@@ -509,7 +509,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1Bh-IR-f0L">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jJ5-KB-Tdy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNavController" automaticallyAdjustsScrollViewInsets="NO" id="jJ5-KB-Tdy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dr2-3r-NWk">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -820,8 +820,16 @@
                             <outlet property="delegate" destination="e35-Dq-lg1" id="Dcy-s8-hIU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="6E9-eQ-r4m"/>
+                    <navigationItem key="navigationItem" title="Settings" leftItemsSupplementBackButton="YES" id="YYM-mL-UBW">
+                        <barButtonItem key="leftBarButtonItem" id="T0d-xn-te1">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed" destination="e35-Dq-lg1" id="AeC-d1-eyZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="T0d-xn-te1" id="VOH-hb-y1K"/>
                         <outlet property="facebookButtonIcon" destination="T9d-6l-QAQ" id="JYw-y3-VLL"/>
                         <outlet property="instagramButtonIcon" destination="lH4-Ul-GuR" id="7xS-zr-DtL"/>
                         <outlet property="learnableiOSAppButtonIcon" destination="C0l-IK-OAL" id="zXN-Pf-ChI"/>

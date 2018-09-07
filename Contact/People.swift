@@ -78,7 +78,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	@IBAction func menuButtonPressed(_ sender: AnyObject) {
-		Utils.presentView(self, viewName: Constants.Views.SETTINGS)
+		Utils.presentView(self, viewName: Constants.Views.SETTINGS_NAV_CONTROLLER)
 	}
 	
 	

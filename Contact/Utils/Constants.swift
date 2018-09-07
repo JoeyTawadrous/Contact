@@ -107,10 +107,13 @@ class Constants {
 	
 	
 	struct Views {
+		static let ADD_CATCH_UP = "AddCatchUp"
 		static let CATCH_UPS = "CatchUps"
 		static let CATCH_UP = "CatchUp"
-		static let ADD_CATCH_UP = "AddCatchUp"
+		static let PEOPLE = "People"
+		static let PEOPLE_NAV_CONTROLLER = "PeopleNavController"
 		static let SETTINGS = "Settings"
+		static let SETTINGS_NAV_CONTROLLER = "SettingsNavController"
 		static let THEMES = "Themes"
 	}
 }
