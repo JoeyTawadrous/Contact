@@ -15,8 +15,6 @@ class Constants {
 		
 		static let CELL = "cell"
 		static let MAIN_STORYBOARD = "Main"
-		static let SUBMIT = "Create"
-		static let CLOSE = "Close"
 	}
 	
 	
@@ -82,7 +80,12 @@ class Constants {
 	
 	
 	struct Strings {
+		static let ALERT_SUBMIT = "Submit"
+		static let ALERT_CLOSE = "Close"
+		
+		
 		static let SHARE = "Check out " + Constants.Common.APPNAME + " on the App Store, where you can easily create reminders to contact your loved ones! #Contact #iOS \n\nDownload for free now: " + Constants.Common.LINK_IOS_STORE
+		
 		
 		// Purchases
 		static let PURCHASE_ERROR_CONTACT_US = " Please contact us."
@@ -94,6 +97,7 @@ class Constants {
 		static let PURCHASE_RESTORE_ERROR = "Restore error." + PURCHASE_ERROR_CONTACT_US
 		static let PURCHASE_RESTORE_NOTHING = "You have no purchases to restore!"
 		static let PURCHASE_RESTORE_SUCCESS = "You have restored your previous purchase and now have access to the entire app!"
+		
 		
 		// Send Feedback
 		static let EMAIL = "joeytawadrous@gmail.com"

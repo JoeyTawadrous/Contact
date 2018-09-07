@@ -190,7 +190,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 			emptyLabel.font = UIFont.GothamProRegular(size: 15.0)
 			emptyLabel.textAlignment = NSTextAlignment.center
 			emptyLabel.textColor = UIColor.white
-			emptyLabel.numberOfLines = 4
+			emptyLabel.numberOfLines = 5
 			emptyView.addSubview(emptyLabel)
 			
 			self.tableView.backgroundView = emptyView
