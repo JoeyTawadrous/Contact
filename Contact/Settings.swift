@@ -5,13 +5,13 @@ import MessageUI
 
 class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 	
-	@IBOutlet weak var learnableiOSAppButtonIcon: UIButton!
-	@IBOutlet weak var reviewButtonIcon: UIButton!
-	@IBOutlet weak var sendFeedbackButtonIcon: UIButton!
-	@IBOutlet weak var shareButtonIcon: UIButton!
-	@IBOutlet weak var twitterButtonIcon: UIButton!
-	@IBOutlet weak var facebookButtonIcon: UIButton!
-	@IBOutlet weak var instagramButtonIcon: UIButton!
+	@IBOutlet var learnableiOSAppButtonIcon: UIButton!
+	@IBOutlet var reviewButtonIcon: UIButton!
+	@IBOutlet var sendFeedbackButtonIcon: UIButton!
+	@IBOutlet var shareButtonIcon: UIButton!
+	@IBOutlet var twitterButtonIcon: UIButton!
+	@IBOutlet var facebookButtonIcon: UIButton!
+	@IBOutlet var instagramButtonIcon: UIButton!
 	@IBOutlet var backButton: UIBarButtonItem!
 	
 	
@@ -83,7 +83,7 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 		Utils.presentView(self, viewName: Constants.Views.PEOPLE_NAV_CONTROLLER)
 	}
 	
-	// APP
+	// App
 	@IBAction func learnableiOSAppButtonPressed() {
 		Utils.openURL(url: Constants.Common.LINK_LEARNABLE_IOS_STORE)
 	}
@@ -118,7 +118,7 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 	}
 	
 	
-	// SHARE
+	// Share
 	@IBAction func shareButtonPressed() {
 		Utils.openShareView(viewController: self)
 	}
