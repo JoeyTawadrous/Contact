@@ -73,6 +73,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+	
+	func applicationWillEnterForeground(_ application: UIApplication) {
+		//		Purchase.restorePurchases(view: self.inputViewController!, showDialog: false)
+		Purchase.verifyReceiptCheck()
+	}
+	
     
     func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
         
