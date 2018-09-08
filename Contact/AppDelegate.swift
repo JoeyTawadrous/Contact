@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		]
 		window?.tintColor = UIColor.white
 		
+		
 		// Local notifications
 		let doneAction = UIMutableUserNotificationAction()
 		doneAction.identifier = Constants.LocalNotifications.DONE_ACTION_IDENTIFIER
@@ -46,12 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: NSSet(array: [actionCategory]) as? Set<UIUserNotificationCategory>))
 		
+		
 		// Purchases
 		Purchase.supportStorePurchase()
 		Purchase.completeTransactions()
+		Purchase.verifyReceiptCheck()
+		
 		
 		// Migration from old themes
-		let currentTheme = UserDefaults.standard.string(forKey: Constants.Purchases.CURRENT_THEME)
+		let currentTheme = Utils.string(key: Constants.Defaults.CURRENT_THEME)
 		if currentTheme != Constants.Purchases.FIRE_THEME &&
 			currentTheme != Constants.Purchases.GRASSY_THEME &&
 			currentTheme != Constants.Purchases.LIFE_THEME &&
@@ -60,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			currentTheme != Constants.Purchases.RIPE_THEME &&
 			currentTheme != Constants.Purchases.SALVATION_THEME &&
 			currentTheme != Constants.Purchases.SUNRISE_THEME {
-			UserDefaults.standard.set(Constants.Purchases.GRASSY_THEME, forKey: Constants.Purchases.CURRENT_THEME)
+			Utils.set(key: Constants.Defaults.CURRENT_THEME, value: Constants.Purchases.GRASSY_THEME)
 		}
 
         return true

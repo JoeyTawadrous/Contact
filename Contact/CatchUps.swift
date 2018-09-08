@@ -25,14 +25,8 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
+		Utils.createFontAwesomeBarButton(button: addButton, icon: .plus, style: .solid)
 		tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-		
-		// Nav bar
-		var attributes = [NSAttributedStringKey : Any]()
-		attributes = [.font: UIFont.fontAwesome(ofSize: 21)]
-		addButton.setTitleTextAttributes(attributes, for: .normal)
-		addButton.setTitleTextAttributes(attributes, for: .selected)
-		addButton.title = String.fontAwesomeIcon(name: .plus)
 		
 		// Observer for every notification received
 		NotificationCenter.default.addObserver(self, selector: #selector(CatchUps.backgoundNofification(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
@@ -116,9 +110,9 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	/* MARK: Table Functionality
 	/////////////////////////////////////////// */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		var cell: CatchUpsTableViewCell! = tableView.dequeueReusableCell(withIdentifier: Constants.Common.CELL) as? CatchUpsTableViewCell
+		var cell: CatchUpsTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as? CatchUpsTableViewCell
 		if cell == nil {
-			cell = CatchUpsTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: Constants.Common.CELL)
+			cell = CatchUpsTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
 		}
 		let tasks = self.catchUps[indexPath.row]
 		let type = tasks.value(forKey: Constants.CoreData.TYPE) as! String?
@@ -164,7 +158,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         defaults.set(NSInteger(indexPath.row), forKey: Constants.LocalData.SELECTED_CATCHUP_INDEX)
 		
         // Show CatchUp view
-        let storyBoard : UIStoryboard = UIStoryboard(name: Constants.Common.MAIN_STORYBOARD, bundle:nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let catchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Views.CATCH_UP) as! CatchUp
         self.show(catchUpView as UIViewController, sender: catchUpView)
     }

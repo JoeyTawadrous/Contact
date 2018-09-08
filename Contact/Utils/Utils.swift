@@ -1,6 +1,7 @@
 import UIKit
 import CoreData
 import MessageUI
+import FontAwesome_swift
 
 
 class Utils {
@@ -12,13 +13,11 @@ class Utils {
 	}
 	
 	class func getCurrentTheme() -> [String] {
-		let currentTheme = UserDefaults.standard.string(forKey: Constants.Purchases.CURRENT_THEME)
-		
-		if (currentTheme != nil) {
-			return Constants.Purchases.Colors[currentTheme!]!
+		if Utils.contains(key: Constants.Defaults.CURRENT_THEME) {
+			return Constants.Purchases.Colors[Utils.string(key: Constants.Defaults.CURRENT_THEME)]!
 		}
 		else {
-			return Constants.Purchases.Colors[Constants.Purchases.GRASSY_THEME]!
+			return Constants.Purchases.Colors[Constants.Purchases.MALIBU_THEME]!
 		}
 	}
 	
@@ -158,6 +157,42 @@ class Utils {
 	
 	
 	
+	/* MARK: Data
+	/////////////////////////////////////////// */
+	class func bool(key: String) -> Bool {
+		return UserDefaults.standard.bool(forKey: key)
+	}
+	
+	class func double(key: String) -> Double {
+		return UserDefaults.standard.double(forKey:key)
+	}
+	
+	class func int(key: String) -> Int {
+		return UserDefaults.standard.integer(forKey:key)
+	}
+	
+	class func object(key: String) -> Any {
+		return UserDefaults.standard.object(forKey: key)!
+	}
+	
+	class func string(key: String) -> String {
+		return UserDefaults.standard.string(forKey: key)!
+	}
+	
+	class func contains(key: String) -> Bool {
+		return UserDefaults.standard.object(forKey: key) != nil
+	}
+	
+	class func set(key: String, value: Any) {
+		UserDefaults.standard.set(value, forKey: key)
+	}
+	
+	class func remove(key: String) {
+		UserDefaults.standard.removeObject(forKey: key)
+	}
+	
+	
+	
 	/* MARK: Dates
 	/////////////////////////////////////////// */
 	class func getDayOfWeek(_ date:String) -> String? {
@@ -240,7 +275,7 @@ class Utils {
 	
 	class func openShareView(viewController: UIViewController) {
 		let share = Constants.Strings.SHARE
-		let link : NSURL = NSURL(string: Constants.Common.LINK_IOS_STORE)!
+		let link : NSURL = NSURL(string: Constants.Strings.LINK_IOS_STORE)!
 		let logo: UIImage = UIImage(named: Constants.Design.LOGO)!
 		
 		let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [share, link, logo], applicationActivities: nil)
@@ -285,10 +320,11 @@ class Utils {
 		view.navigationController?.pushViewController(getViewController(viewName), animated: true)
 	}
 	
-	class func showOkButtonDialog(view: UIViewController, message: String) {
-		let alert = UIAlertController(title: "Info", message: message, preferredStyle: UIAlertControllerStyle.alert)
-		alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in }))
-		
-		view.present(alert, animated: true, completion: nil)
+	class func createFontAwesomeBarButton(button: UIBarButtonItem, icon: FontAwesome, style: FontAwesomeStyle) {
+		var attributes = [NSAttributedStringKey : Any]()
+		attributes = [.font: UIFont.fontAwesome(ofSize: 21, style: style)]
+		button.setTitleTextAttributes(attributes, for: .normal)
+		button.setTitleTextAttributes(attributes, for: .selected)
+		button.title = String.fontAwesomeIcon(name: icon)
 	}
 }
