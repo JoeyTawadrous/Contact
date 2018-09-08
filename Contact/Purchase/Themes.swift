@@ -62,13 +62,17 @@ class Themes: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		let themes = Constants.Purchases.Colors.keys
 		let theme = Array(themes)[indexPath.row]
-		let currentTheme = Utils.string(key: Constants.Defaults.CURRENT_THEME)
+		
+		var currentTheme = Constants.Purchases.GRASSY_THEME
+		if Utils.contains(key: Constants.Defaults.CURRENT_THEME) {
+			currentTheme = Utils.string(key: Constants.Defaults.CURRENT_THEME)
+		}
 		
 		if theme == currentTheme {
 			Dialogs.showOkButtonDialog(view: self, message: currentTheme + " is Currently Set." + "Please select another theme to set as default.")
 		}
 		else {
-			if theme != Constants.Purchases.MALIBU_THEME {
+			if theme != Constants.Purchases.GRASSY_THEME {
 				if Utils.contains(key: Constants.Defaults.PURCHASED_THEMES) {
 					let purchasedThemes = Utils.object(key: Constants.Defaults.PURCHASED_THEMES) as? [String]
 					if !(purchasedThemes?.contains(theme))! {
