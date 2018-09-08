@@ -10,5 +10,6 @@ target 'Contact' do
   pod 'FontAwesome.swift'
   pod 'SwiftForms'
   pod 'SwiftyStoreKit'
+  pod 'paper-onboarding'
 
 end
