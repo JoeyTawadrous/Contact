@@ -469,7 +469,7 @@
         <!--Settings-->
         <scene sceneID="tTe-LZ-yaY">
             <objects>
-                <tableViewController storyboardIdentifier="Settings" id="FDa-UZ-fKp" customClass="Settings" customModule="Tasky" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Settings" id="FDa-UZ-fKp" customClass="Settings" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="TTK-bn-WKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,12 +555,51 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="8Ae-et-yiV">
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ae-et-yiV" id="a0m-zj-Dqt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSd-dK-5Xy">
+                                                    <rect key="frame" x="22" y="6.5" width="30" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="restorePurchasesButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="fOZ-nq-dfM"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-dQ-ZR1">
+                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal" title="Restore Purchases">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="restorePurchasesButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="wCO-IU-gX9"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HV3-dQ-ZR1" firstAttribute="centerY" secondItem="a0m-zj-Dqt" secondAttribute="centerY" id="BFc-TG-ixU"/>
+                                                <constraint firstItem="HV3-dQ-ZR1" firstAttribute="leading" secondItem="a0m-zj-Dqt" secondAttribute="leadingMargin" constant="39" id="no0-bf-abx"/>
+                                                <constraint firstItem="HV3-dQ-ZR1" firstAttribute="centerX" secondItem="a0m-zj-Dqt" secondAttribute="centerX" constant="22.5" id="teN-Sh-k9W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="App" id="NOI-Ge-wff">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TW0-iY-KXx">
-                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TW0-iY-KXx" id="wbB-EJ-pBd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -599,7 +638,7 @@
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="DXR-6L-tvk">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXR-6L-tvk" id="KX6-lX-RYv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -638,7 +677,7 @@
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qdy-od-Qvo">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qdy-od-Qvo" id="BUV-gZ-n0b">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -676,12 +715,51 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="JqZ-tZ-2kd">
+                                        <rect key="frame" x="0.0" y="375.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JqZ-tZ-2kd" id="Ffn-dJ-Z1n">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-Xw-E55">
+                                                    <rect key="frame" x="22" y="6.5" width="30" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="privacyAndTermsButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="vtr-sI-Z5Z"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUZ-qV-Hq5">
+                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal" title="Privacy &amp; Terms">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="privacyAndTermsButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="qnZ-M9-qnG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="centerY" secondItem="Ffn-dJ-Z1n" secondAttribute="centerY" id="8WB-3J-4OP"/>
+                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="leading" secondItem="Ffn-dJ-Z1n" secondAttribute="leadingMargin" constant="39" id="Izo-7O-ovC"/>
+                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="centerX" secondItem="Ffn-dJ-Z1n" secondAttribute="centerX" constant="22.5" id="VTv-3Q-nae"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Share" footerTitle="© 2018 Contact" id="hmR-oY-w2i" userLabel="Share">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="e8Q-3K-Tgr">
-                                        <rect key="frame" x="0.0" y="395" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="483" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e8Q-3K-Tgr" id="tnx-fk-Vd7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -720,7 +798,7 @@
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KN5-9n-94J">
-                                        <rect key="frame" x="0.0" y="439" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="527" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KN5-9n-94J" id="sNI-2R-kzk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -759,7 +837,7 @@
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="v8z-Wk-Y6I">
-                                        <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="571" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8z-Wk-Y6I" id="V4s-q9-njK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -798,7 +876,7 @@
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="V7m-LG-rk3">
-                                        <rect key="frame" x="0.0" y="527" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="615" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7m-LG-rk3" id="klN-X5-FT0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -858,6 +936,8 @@
                         <outlet property="facebookButtonIcon" destination="8HN-NN-RZS" id="F01-vu-uRR"/>
                         <outlet property="instagramButtonIcon" destination="KbJ-0y-nzq" id="Xpp-bH-wDC"/>
                         <outlet property="learnableiOSAppButtonIcon" destination="jDm-TE-Ngm" id="lNz-uG-6Il"/>
+                        <outlet property="privacyAndTermsButtonIcon" destination="Ct5-Xw-E55" id="QlG-6c-STe"/>
+                        <outlet property="restorePurchasesButtonIcon" destination="oSd-dK-5Xy" id="Vl1-EN-c9X"/>
                         <outlet property="reviewButtonIcon" destination="H3X-pf-0CV" id="Lv6-pR-iJl"/>
                         <outlet property="sendFeedbackButtonIcon" destination="tMj-0L-d1p" id="XKm-tt-5Wi"/>
                         <outlet property="shareButtonIcon" destination="qXf-2u-uhy" id="yzf-Ij-J2v"/>
@@ -872,7 +952,7 @@
         <!--Select Theme-->
         <scene sceneID="dWa-es-Dz6">
             <objects>
-                <viewController storyboardIdentifier="Themes" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QZU-sL-c6M" customClass="Themes" customModule="Tasky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Themes" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QZU-sL-c6M" customClass="Themes" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EFb-cs-6Ez"/>
                         <viewControllerLayoutGuide type="bottom" id="fCe-mq-tCP"/>
@@ -956,7 +1036,7 @@
         <!--Upgrade Scene-->
         <scene sceneID="IC3-fS-yPD">
             <objects>
-                <viewController storyboardIdentifier="Upgrade" id="J29-A1-Wph" userLabel="Upgrade Scene" customClass="Upgrade" customModule="Tasky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Upgrade" id="J29-A1-Wph" userLabel="Upgrade Scene" customClass="Upgrade" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MZs-rY-wZ9"/>
                         <viewControllerLayoutGuide type="bottom" id="P9F-82-lJ3"/>
