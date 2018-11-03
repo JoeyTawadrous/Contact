@@ -6,10 +6,12 @@ target 'Contact' do
   use_frameworks!
 
   # Pods for Contact
+  pod 'KYCircularProgress'
   pod 'SCLAlertView'
   pod 'FontAwesome.swift'
   pod 'SwiftForms'
   pod 'SwiftyStoreKit'
   pod 'paper-onboarding'
+  pod 'SwiftyJSON'
 
 end

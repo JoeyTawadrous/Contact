@@ -13,6 +13,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet var addButton: UIBarButtonItem!
+	@IBOutlet var achievementsButton: UIBarButtonItem!
 	@IBOutlet var menuButton: UIBarButtonItem!
     
     var people = [AnyObject]()
@@ -34,6 +35,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
 		Utils.createFontAwesomeBarButton(button: addButton, icon: .plus, style: .solid)
+		Utils.createFontAwesomeBarButton(button: achievementsButton, icon: .gem, style: .solid)
 		Utils.createFontAwesomeBarButton(button: menuButton, icon: .bars, style: .solid)
 		tableView.separatorStyle = UITableViewCellSeparatorStyle.none
 	}
@@ -62,11 +64,34 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 			if !textField.text!.isEmpty {
 				self.people.insert(Utils.createPerson(name: textField.text!), at: 0)
 				self.tableView.reloadData()
+				
+				
+				// Achievements
+				var totalPeopleMet = Utils.double(key: Constants.Defaults.APP_DATA_TOTAL_PEOPLE_MET)
+				totalPeopleMet = totalPeopleMet + 1
+				Utils.set(key: Constants.Defaults.APP_DATA_TOTAL_PEOPLE_MET, value: totalPeopleMet)
+				
+				var totalPoints = Utils.double(key: Constants.Defaults.APP_DATA_TOTAL_POINTS)
+				totalPoints = totalPoints + 3
+				Utils.set(key: Constants.Defaults.APP_DATA_TOTAL_POINTS, value: totalPoints)
+				
+				// Has the user reached an achievement?
+				ProgressManager.checkAndSetAchievementReached(view: self, type: Constants.Achievements.POINTS_TYPE)
+				ProgressManager.checkAndSetAchievementReached(view: self, type: Constants.Achievements.PEOPLE_TYPE)
+				
+				let points = Utils.int(key: Constants.Defaults.APP_DATA_TOTAL_POINTS)
+				if(ProgressManager.shouldLevelUp(points: (points - 3))) {
+					Dialogs.showLevelUpDialog(view: self, level: ProgressManager.getLevel(points: (points - 3)))
+				}
 			}
 		}
 		alertView.addButton(Constants.Strings.ALERT_CLOSE) {}
 		
 		alertView.showCustom(ClassConstants.ADD_PERSON_TITLE, subTitle: ClassConstants.ADD_PERSON_MESSAGE, color: Utils.getMainColor(), icon: alertViewIcon!, animationStyle: .leftToRight)
+	}
+	
+	@IBAction func achievementsButtonPressed(_ sender: AnyObject) {
+		Utils.presentView(self, viewName: Constants.Views.ACHIEVEMENTS)
 	}
 	
 	@IBAction func menuButtonPressed(_ sender: AnyObject) {

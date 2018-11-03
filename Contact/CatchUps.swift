@@ -145,6 +145,9 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
+			
+			// Achievements
+			CatchUp.updateCatchupCompleted(view: self)
         }
         
         return [deleteAction]

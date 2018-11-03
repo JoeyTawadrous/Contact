@@ -18,6 +18,13 @@
         }
     },
     {
+        "filter": "Achievements",
+        "background": "assets/dark_blue.jpeg",
+        "title": {
+            "text": "Contact friends and unlock \nbadges while you level up"
+        }
+    },
+    {
         "filter": "CatchUps",
         "background": "assets/orange.jpeg",
         "title": {
