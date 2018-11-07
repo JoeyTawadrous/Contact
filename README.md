@@ -14,6 +14,8 @@ There are always people in all of our lives that we would like to keep in touch 
 
 Contact makes it easy for you to improve and maintain these relationships by reminding you when it's time to reach out to them and what the two of you talked about the last time.
 
+Earn Achievements: Contact friends and unlock badges while you level up. Gamify staying in contact with your friends and family.
+
 In our world today we're more connected than ever. We spend countless hours online, sometimes losing ourselves in the noise of the future, that we forget about the present and the people in our lives.
 
 
