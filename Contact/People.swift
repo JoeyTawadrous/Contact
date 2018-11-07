@@ -60,7 +60,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let alertViewIcon = UIImage(named: "trophy")
 		let textField = alertView.addTextField(ClassConstants.ADD_PERSON_NAME)
 		
-		alertView.addButton(Constants.Strings.ALERT_SUBMIT) {
+		alertView.addButton(Constants.Strings.ALERT_DIALOG_SUBMIT) {
 			if !textField.text!.isEmpty {
 				self.people.insert(Utils.createPerson(name: textField.text!), at: 0)
 				self.tableView.reloadData()
@@ -85,7 +85,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				}
 			}
 		}
-		alertView.addButton(Constants.Strings.ALERT_CLOSE) {}
+		alertView.addButton(Constants.Strings.ALERT_DIALOG_CLOSE) {}
 		
 		alertView.showCustom(ClassConstants.ADD_PERSON_TITLE, subTitle: ClassConstants.ADD_PERSON_MESSAGE, color: Utils.getMainColor(), icon: alertViewIcon!, animationStyle: .leftToRight)
 	}
