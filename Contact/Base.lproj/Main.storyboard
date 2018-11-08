@@ -485,10 +485,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
+                            <tableViewSection headerTitle="About Contact" id="1hY-rP-efk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="8VR-if-rwv">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8VR-if-rwv" id="lOg-sX-ReM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyM-pJ-eSO">
+                                                    <rect key="frame" x="22" y="6.5" width="30" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="aboutButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="SOg-M3-WYz"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="una-bu-H2J">
+                                                    <rect key="frame" x="55" y="6" width="310" height="30"/>
+                                                    <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
+                                                    <state key="normal">
+                                                        <string key="title">Keeping in touch with all your friends and family is sometimes a difficult task. We get it. You're a popular person. Whether you want to get a coffee, talk about an idea or plan a vacation, the first step is actually planning to make contact.</string>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="aboutButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="khR-GJ-shh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="una-bu-H2J" firstAttribute="centerX" secondItem="lOg-sX-ReM" secondAttribute="centerX" constant="22.5" id="1ZS-FD-qEp"/>
+                                                <constraint firstItem="una-bu-H2J" firstAttribute="centerY" secondItem="lOg-sX-ReM" secondAttribute="centerY" id="3Au-RE-QYy"/>
+                                                <constraint firstItem="una-bu-H2J" firstAttribute="leading" secondItem="lOg-sX-ReM" secondAttribute="leadingMargin" constant="39" id="59g-F4-XKD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Premium" id="2IG-g0-KdC">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Kuz-34-zRF">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Kuz-34-zRF">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kuz-34-zRF" id="Iup-ms-KoW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -506,7 +550,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xo-iC-QGJ">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Upgrade">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -526,8 +570,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="D0I-M7-WfX">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="D0I-M7-WfX">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0I-M7-WfX" id="bpm-Y5-1IU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -545,7 +589,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YU-AY-lbV">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Change Theme">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -565,8 +609,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="8Ae-et-yiV">
-                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="8Ae-et-yiV">
+                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ae-et-yiV" id="a0m-zj-Dqt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -584,7 +628,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-dQ-ZR1">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Restore Purchases">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -608,8 +652,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="App" id="NOI-Ge-wff">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TW0-iY-KXx">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="TW0-iY-KXx">
+                                        <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TW0-iY-KXx" id="wbB-EJ-pBd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -627,7 +671,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZL9-1M-gq2">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Learn to Code">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -647,8 +691,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="DXR-6L-tvk">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="DXR-6L-tvk">
+                                        <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXR-6L-tvk" id="KX6-lX-RYv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -666,7 +710,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHl-33-lDG">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Review Contact">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -686,8 +730,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qdy-od-Qvo">
-                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="qdy-od-Qvo">
+                                        <rect key="frame" x="0.0" y="431.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qdy-od-Qvo" id="BUV-gZ-n0b">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -705,7 +749,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zX-jW-sOw">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="7" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Send Feedback">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -725,14 +769,14 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="JqZ-tZ-2kd">
-                                        <rect key="frame" x="0.0" y="375.5" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="rPO-Ab-EdF">
+                                        <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JqZ-tZ-2kd" id="Ffn-dJ-Z1n">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rPO-Ab-EdF" id="i7T-a0-52Y">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-Xw-E55">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-jC-x4q">
                                                     <rect key="frame" x="22" y="6.5" width="30" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
@@ -740,24 +784,24 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="privacyAndTermsButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="vtr-sI-Z5Z"/>
+                                                        <action selector="aboutButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="s1n-dK-thG"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUZ-qV-Hq5">
-                                                    <rect key="frame" x="55" y="7.5" width="310" height="29"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-aQ-ClR">
+                                                    <rect key="frame" x="55" y="6" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
-                                                    <state key="normal" title="Privacy &amp; Terms">
+                                                    <state key="normal" title="Follow the Developer">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="privacyAndTermsButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="qnZ-M9-qnG"/>
+                                                        <action selector="aboutButtonPressed" destination="FDa-UZ-fKp" eventType="touchUpInside" id="zzQ-ZM-4bd"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="centerY" secondItem="Ffn-dJ-Z1n" secondAttribute="centerY" id="8WB-3J-4OP"/>
-                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="leading" secondItem="Ffn-dJ-Z1n" secondAttribute="leadingMargin" constant="39" id="Izo-7O-ovC"/>
-                                                <constraint firstItem="IUZ-qV-Hq5" firstAttribute="centerX" secondItem="Ffn-dJ-Z1n" secondAttribute="centerX" constant="22.5" id="VTv-3Q-nae"/>
+                                                <constraint firstItem="VmN-aQ-ClR" firstAttribute="centerX" secondItem="i7T-a0-52Y" secondAttribute="centerX" constant="22.5" id="0vG-EL-0cc"/>
+                                                <constraint firstItem="VmN-aQ-ClR" firstAttribute="centerY" secondItem="i7T-a0-52Y" secondAttribute="centerY" id="PXM-E4-OQf"/>
+                                                <constraint firstItem="VmN-aQ-ClR" firstAttribute="leading" secondItem="i7T-a0-52Y" secondAttribute="leadingMargin" constant="39" id="c0n-79-v8Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -768,8 +812,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Share" footerTitle="© 2018 Contact" id="hmR-oY-w2i" userLabel="Share">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="e8Q-3K-Tgr">
-                                        <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="e8Q-3K-Tgr">
+                                        <rect key="frame" x="0.0" y="583" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e8Q-3K-Tgr" id="tnx-fk-Vd7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -787,7 +831,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRE-Fz-ouU">
-                                                    <rect key="frame" x="55" y="7" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="6.5" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Share the love">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -807,8 +851,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KN5-9n-94J">
-                                        <rect key="frame" x="0.0" y="527" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="KN5-9n-94J">
+                                        <rect key="frame" x="0.0" y="627" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KN5-9n-94J" id="sNI-2R-kzk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -826,7 +870,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxQ-A4-e2G">
-                                                    <rect key="frame" x="55" y="7" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="6.5" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Follow us on Twitter">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -846,8 +890,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="v8z-Wk-Y6I">
-                                        <rect key="frame" x="0.0" y="571" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="v8z-Wk-Y6I">
+                                        <rect key="frame" x="0.0" y="671" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8z-Wk-Y6I" id="V4s-q9-njK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -865,7 +909,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlk-ex-gTX">
-                                                    <rect key="frame" x="55" y="7" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="6.5" width="310" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Like us on Facebook">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -885,8 +929,8 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="V7m-LG-rk3">
-                                        <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="V7m-LG-rk3">
+                                        <rect key="frame" x="0.0" y="715" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7m-LG-rk3" id="klN-X5-FT0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -904,7 +948,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPS-Hx-OQP">
-                                                    <rect key="frame" x="47" y="7" width="326" height="29"/>
+                                                    <rect key="frame" x="47" y="6.5" width="326" height="30"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="15"/>
                                                     <state key="normal" title="Heart us on Instagram">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -941,12 +985,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutButton" destination="una-bu-H2J" id="ETw-cD-jTC"/>
+                        <outlet property="aboutButtonIcon" destination="tyM-pJ-eSO" id="HFU-sU-pNJ"/>
                         <outlet property="backButton" destination="S9N-q0-URO" id="7x4-qp-epl"/>
                         <outlet property="changeThemeButtonIcon" destination="x8l-02-JQC" id="B1y-yz-tFq"/>
                         <outlet property="facebookButtonIcon" destination="8HN-NN-RZS" id="F01-vu-uRR"/>
+                        <outlet property="followTheDeveloperButtonIcon" destination="cuq-jC-x4q" id="8FU-FF-C13"/>
                         <outlet property="instagramButtonIcon" destination="KbJ-0y-nzq" id="Xpp-bH-wDC"/>
                         <outlet property="learnableiOSAppButtonIcon" destination="jDm-TE-Ngm" id="lNz-uG-6Il"/>
-                        <outlet property="privacyAndTermsButtonIcon" destination="Ct5-Xw-E55" id="QlG-6c-STe"/>
                         <outlet property="restorePurchasesButtonIcon" destination="oSd-dK-5Xy" id="Vl1-EN-c9X"/>
                         <outlet property="reviewButtonIcon" destination="H3X-pf-0CV" id="Lv6-pR-iJl"/>
                         <outlet property="sendFeedbackButtonIcon" destination="tMj-0L-d1p" id="XKm-tt-5Wi"/>
@@ -1118,7 +1164,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="achievementCollectionViewCell" id="9va-rS-UbH" customClass="AchievementCollectionViewCell" customModule="Meditation" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="achievementCollectionViewCell" id="9va-rS-UbH" customClass="AchievementCollectionViewCell" customModule="Contact" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
