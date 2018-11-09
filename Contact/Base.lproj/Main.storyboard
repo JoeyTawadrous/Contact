@@ -1151,6 +1151,11 @@
                                                 <action selector="backButtonPressed" destination="msX-5W-APY" id="ags-a4-36q"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="gKG-SO-VoR">
+                                            <connections>
+                                                <action selector="infoButtonPressed" destination="msX-5W-APY" id="wG2-nj-eaH"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1245,6 +1250,7 @@
                     <connections>
                         <outlet property="backButton" destination="nQP-IO-h2J" id="uUJ-m6-gN9"/>
                         <outlet property="collectionView" destination="Q6J-Pv-mPO" id="4og-Aj-7vY"/>
+                        <outlet property="infoButton" destination="gKG-SO-VoR" id="27b-Ny-cFR"/>
                         <outlet property="topView" destination="B5X-wL-gPD" id="avL-aq-Wqp"/>
                         <outlet property="view" destination="dSt-eL-VyB" id="TRe-p6-nOx"/>
                     </connections>

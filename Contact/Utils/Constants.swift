@@ -143,6 +143,11 @@ class Constants {
 		
 		
 		// Dialog: Achievements
+		static let ACHIEVEMENTS_INFO_DIALOG_TITLE = "How to Earn Points"
+		static let ACHIEVEMENTS_INFO_DIALOG_SUBTITLE = "\nEvery person created will earn you three points. \n\nEvery catchup completed will earn you 2 points. \n\nEvery person created/catchup completed/point gained brings you closer to earning achievement bagdes and levelling up :) \n"
+
+		
+		// Dialog: Achievements
 		static let ACHIEVEMENT_DIALOG_CLOSE_BUTTON = "Let's continue :)"
 		static let ACHIEVEMENT_DIALOG_SHARE_BUTTON = "Share my achievement!"
 		static let ACHIEVEMENT_DIALOG_TITLE = "Congratulations!"
