@@ -98,6 +98,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 						return dateComparisionResult == ComparisonResult.orderedAscending
 					})
 					
+					notification.repeatInterval = NSCalendar.Unit.day
 					notification.applicationIconBadgeNumber = overdueCatchUps.count                // set new badge number
 					UIApplication.shared.scheduleLocalNotification(notification)      // reschedule notification
 				}
