@@ -380,7 +380,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dj-mz-2bI">
-                                                    <rect key="frame" x="24" y="29" width="70.5" height="15"/>
+                                                    <rect key="frame" x="24" y="29" width="293" height="15"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Bold" family="Gotham Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -398,6 +398,7 @@
                                                 <constraint firstItem="9Dj-mz-2bI" firstAttribute="top" secondItem="Fv6-Og-FBW" secondAttribute="topMargin" constant="18" id="Qa6-u6-Fp2"/>
                                                 <constraint firstItem="9Dj-mz-2bI" firstAttribute="centerY" secondItem="nn7-xx-G22" secondAttribute="centerY" id="Rxs-cJ-g6I"/>
                                                 <constraint firstItem="9Dj-mz-2bI" firstAttribute="leading" secondItem="Fv6-Og-FBW" secondAttribute="leadingMargin" constant="9" id="TJF-mI-T9V"/>
+                                                <constraint firstItem="9Dj-mz-2bI" firstAttribute="trailing" secondItem="nn7-xx-G22" secondAttribute="trailing" constant="-27" id="hwu-o9-5yC"/>
                                                 <constraint firstItem="9Dj-mz-2bI" firstAttribute="centerY" secondItem="Fv6-Og-FBW" secondAttribute="centerY" id="knk-I5-cSi"/>
                                                 <constraint firstItem="nn7-xx-G22" firstAttribute="top" secondItem="Fv6-Og-FBW" secondAttribute="topMargin" constant="12" id="v2k-Rw-q2s"/>
                                             </constraints>
