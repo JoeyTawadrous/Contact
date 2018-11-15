@@ -507,7 +507,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="una-bu-H2J">
-                                                    <rect key="frame" x="55" y="6.5" width="310" height="29"/>
+                                                    <rect key="frame" x="55" y="6.5" width="300" height="29"/>
                                                     <fontDescription key="fontDescription" name="GothamPro-Medium" family="Gotham Pro" pointSize="14.5"/>
                                                     <state key="normal">
                                                         <string key="title">Keeping in touch with all your friends and family is sometimes a difficult task. We get it. You're a popular person. Whether you want to get a coffee, talk about an idea or plan a vacation, the first step is actually planning to make contact.</string>
@@ -519,7 +519,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="una-bu-H2J" firstAttribute="centerX" secondItem="lOg-sX-ReM" secondAttribute="centerX" constant="22.5" id="1ZS-FD-qEp"/>
+                                                <constraint firstItem="una-bu-H2J" firstAttribute="centerX" secondItem="lOg-sX-ReM" secondAttribute="centerX" constant="17.5" id="1ZS-FD-qEp"/>
                                                 <constraint firstItem="una-bu-H2J" firstAttribute="centerY" secondItem="lOg-sX-ReM" secondAttribute="centerY" id="3Au-RE-QYy"/>
                                                 <constraint firstItem="una-bu-H2J" firstAttribute="leading" secondItem="lOg-sX-ReM" secondAttribute="leadingMargin" constant="39" id="59g-F4-XKD"/>
                                             </constraints>
