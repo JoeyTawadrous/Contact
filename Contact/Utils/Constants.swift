@@ -64,7 +64,9 @@ class Constants {
         static let WHEN = "when"
         static let UUID = "uuid"
     }
-	
+    struct AppGroup {
+        static let NAME = "group.com.joeyt.contact"
+    }
 	
 	struct Defaults {
 		// Achievements
