@@ -24,8 +24,8 @@ deliver(
   metadata_path: "./metadata",
   skip_screenshots: true,
   skip_metadata: false,
-  app_version: "3.5.0",
-  build_number: "2",
+  app_version: "3.5.1",
+  build_number: "1",
   run_precheck_before_submit: false,
   reject_if_possible: true
 )
