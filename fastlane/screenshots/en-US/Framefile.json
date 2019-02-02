@@ -1,0 +1,41 @@
+{
+    "default": {
+        "title": {
+            "color": "#fff",
+            "font": "assets/GothamProMedium.ttf"
+        },
+        "padding": 40,
+        "font_scale_factor": 0.2,
+        "show_complete_frame": true
+    },
+
+
+    "data": [{
+        "filter": "People",
+        "background": "assets/blue.jpeg",
+        "title": {
+            "text": "Choose people to stay \nin contact with"
+        }
+    },
+    {
+        "filter": "Achievements",
+        "background": "assets/dark_blue.jpeg",
+        "title": {
+            "text": "Contact friends and unlock \nbadges while you level up"
+        }
+    },
+    {
+        "filter": "CatchUps",
+        "background": "assets/orange.jpeg",
+        "title": {
+            "text": "Add catchup events \nfor each person"
+        }
+    },
+    {
+        "filter": "CatchUp",
+        "background": "assets/purple.jpeg",
+        "title": {
+            "text": "Receive event reminders \nfor your catchups"
+        }
+    }]
+}
