@@ -11,7 +11,7 @@
 #
 
 # Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+update_fastlane
 
 default_platform(:ios)
 
@@ -29,3 +29,8 @@ deliver(
   run_precheck_before_submit: false,
   reject_if_possible: true
 )
+
+Dir.chdir("..") do
+  require 'snapshot'
+  ReportsGenerator.new.generate
+end 

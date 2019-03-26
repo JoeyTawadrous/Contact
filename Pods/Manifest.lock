@@ -17,7 +17,7 @@ DEPENDENCIES:
   - SwiftyStoreKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - FontAwesome.swift
     - KYCircularProgress
     - paper-onboarding
@@ -37,4 +37,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: baf3594c2ce5869d131ecf2a89a8984689e7a0a3
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

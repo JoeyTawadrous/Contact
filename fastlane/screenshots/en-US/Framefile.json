@@ -25,17 +25,17 @@
         }
     },
     {
-        "filter": "CatchUps",
-        "background": "assets/orange.jpeg",
-        "title": {
-            "text": "Add catchup events \nfor each person"
-        }
-    },
-    {
         "filter": "CatchUp",
         "background": "assets/purple.jpeg",
         "title": {
             "text": "Receive event reminders \nfor your catchups"
+        }
+    },
+    {
+        "filter": "CatchUps",
+        "background": "assets/orange.jpeg",
+        "title": {
+            "text": "Add catchup events \nfor each person"
         }
     }]
 }

@@ -29,7 +29,7 @@ class AddCatchUp: FormViewController {
         static let TYPE3 = "Facebook"
         static let TYPE4 = "Twitter"
         static let TYPE5 = "Skype Call"
-        static let TYPE6 = "LinkedIn"
+        static let TYPE6 = "Linkedin"
         static let TYPE7 = "Email"
         static let TYPE8 = "Other"
     }

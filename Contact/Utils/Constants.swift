@@ -115,6 +115,7 @@ class Constants {
 		
 		// Themes
 		static let THEME_ID_PREFIX = "com.joeyt.contact.iap.theme."
+        static let GREEN_THEME = "New Beginnings"
 		static let GRASSY_THEME = "grassy"
 		static let SUNRISE_THEME = "sunrise"
 		static let NIGHTLIGHT_THEME = "nightlight"
@@ -125,6 +126,7 @@ class Constants {
 		static let FIRE_THEME = "fire"
 		
 		static let Colors: [String : [String]] = [
+            GREEN_THEME: ["9ef42e","4cd9bb"],
 			GRASSY_THEME: ["009efd", "2af598"],
 			SUNRISE_THEME: ["f6d365", "fda085"],
 			NIGHTLIGHT_THEME: ["a18cd1", "fbc2eb"],

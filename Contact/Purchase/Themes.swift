@@ -47,7 +47,7 @@ class Themes: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		let themes = Constants.Purchases.Colors.keys
 		let theme = Array(themes)[indexPath.row]
 		
-		cell.textLabel?.text = theme.capitalizeFirst()
+		cell.textLabel?.text = theme.capitalized //.capitalizeFirst()
 		cell.textLabel?.textColor = UIColor.white
 		cell.textLabel?.font = UIFont.GothamProMedium(size: 20.0)
 		

@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		// Migration from old themes
-		var currentTheme = Constants.Purchases.GRASSY_THEME
+		var currentTheme = Constants.Purchases.GREEN_THEME
 		if Utils.contains(key: Constants.Defaults.CURRENT_THEME) {
 			currentTheme = Utils.string(key: Constants.Defaults.CURRENT_THEME)
 		}
@@ -70,8 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			currentTheme != Constants.Purchases.NIGHTLIGHT_THEME &&
 			currentTheme != Constants.Purchases.RIPE_THEME &&
 			currentTheme != Constants.Purchases.SALVATION_THEME &&
-			currentTheme != Constants.Purchases.SUNRISE_THEME {
-			Utils.set(key: Constants.Defaults.CURRENT_THEME, value: Constants.Purchases.GRASSY_THEME)
+			currentTheme != Constants.Purchases.SUNRISE_THEME &&
+            currentTheme != Constants.Purchases.GRASSY_THEME {
+			Utils.set(key: Constants.Defaults.CURRENT_THEME, value: Constants.Purchases.GREEN_THEME)
 		}
 
         return true

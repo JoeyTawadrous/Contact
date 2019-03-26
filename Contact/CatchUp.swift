@@ -67,9 +67,29 @@ class CatchUp: UIViewController {
         // Complete button
 		markDoneButton!.layer.cornerRadius = 3
 		markDoneButton!.setTitleColor(Utils.getMainColor(), for: UIControlState())
+        
+        self.addWhiteLayers()
     }
 	
-	
+    func addWhiteLayers() {
+        self.reasonLabel?.layer.borderWidth = 3
+        self.reasonLabel?.layer.borderColor = UIColor.white.cgColor
+        
+        self.personImageView?.layer.borderWidth = 3
+        self.personImageView?.layer.borderColor = UIColor.white.cgColor
+        
+        self.dateLabel?.layer.borderWidth = 3
+        self.dateLabel?.layer.borderColor = UIColor.white.cgColor
+        
+        self.timeLabel?.layer.borderWidth = 3
+        self.timeLabel?.layer.borderColor = UIColor.white.cgColor
+        
+        self.typeLabel?.layer.borderWidth = 3
+        self.typeLabel?.layer.borderColor = UIColor.white.cgColor
+        
+        self.catchUpImageView?.layer.borderWidth = 3
+        self.catchUpImageView?.layer.borderColor = UIColor.white.cgColor
+    }
 	
 	/* MARK: Button Actions
 	/////////////////////////////////////////// */
@@ -80,6 +100,7 @@ class CatchUp: UIViewController {
         let selectedPerson = defaults.string(forKey: Constants.LocalData.SELECTED_PERSON)!
         let selectedCatchUpIndex = defaults.integer(forKey: Constants.LocalData.SELECTED_CATCHUP_INDEX)
         var catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
+        catchUps.reverse()
         let catchUp = catchUps[selectedCatchUpIndex] as! NSManagedObject
         CatchUps.deleteCatchUp(catchUp)
 

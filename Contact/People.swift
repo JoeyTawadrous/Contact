@@ -28,9 +28,9 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		tableView.reloadData()
 		
 		// Demo data
-//		if people.count == 0 {
-//			people = Utils.createDemoData()
-//		}
+//        if people.count == 0 {
+//            people = Utils.createDemoData()
+//        }
 		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
