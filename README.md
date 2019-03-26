@@ -1,4 +1,4 @@
-# Contact: Remember your friends - Family, friends & buddy list
+# Contact: People Organizer
 
 Store Link: http://apple.co/1TZWpPK
 

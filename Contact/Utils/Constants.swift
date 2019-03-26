@@ -148,7 +148,7 @@ class Constants {
 		
 		// Dialog: Achievements
 		static let ACHIEVEMENTS_INFO_DIALOG_TITLE = "How to Earn Points"
-		static let ACHIEVEMENTS_INFO_DIALOG_SUBTITLE = "\nEvery person created will earn you three points. \n\nEvery catchup completed will earn you 2 points. \n\nEvery person created/catchup completed/point gained brings you closer to earning achievement bagdes and levelling up :) \n"
+		static let ACHIEVEMENTS_INFO_DIALOG_SUBTITLE = "\nEvery person created will earn you three points. \n\nEvery catchup completed will earn you two points. \n\nEvery person created/catchup completed/point gained brings you closer to earning achievement bagdes and levelling up :) \n"
 
 		
 		// Dialog: Achievements
@@ -169,7 +169,7 @@ class Constants {
 		static let LINK_APP_REVIEW = "itms-apps://itunes.apple.com/app/apple-store/id" + Core.APP_ID + "?action=write-review"
 		static let LINK_FACEBOOK = "https://www.facebook.com/getlearnable"
 		static let LINK_INSTAGRAM = "https://www.instagram.com/learnableapp"
-		static let LINK_IOS_STORE = "https://itunes.apple.com/gb/app/contact-remember-your-friends/id1101260252?mt=8"
+		static let LINK_IOS_STORE = "https://itunes.apple.com/us/app/contact-people-organizer/id1101260252?mt=8"
 		static let LINK_PRIVACY_AND_TERMS = "https://www.getLearnable.com/privacy.php"
 		static let LINK_LEARNABLE_IOS_STORE = "https://itunes.apple.com/gb/app/learnable-learn-to-code-from-scratch-level-up/id1254862243?mt=8"
 		static let LINK_TWITTER = "https://twitter.com/getlearnable"
