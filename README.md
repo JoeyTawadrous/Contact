@@ -30,12 +30,11 @@ In our world today we're more connected than ever. We spend countless hours onli
 
 Whether it's your family, relatives, colleagues or gym acquaintances, Contact will allow you to create groups of people, schedule reminders, add topics & receive push notifications when you've scheduled to make contact.
 
-
 Sometimes it's difficult to meet people that you genuinely connect with. Keep in touch with them and build a stronger connection with the people that matter.
 
 
-<img alt="Screenshot" width="205px" src="readme_assets/1.png"><img alt="Screenshot2" width="205px" src="readme_assets/2.png"><img alt="Screenshot3" width="205px" src="readme_assets/3.png">
-<br><img alt="Screenshot" width="205px" src="readme_assets/1_ipad.png"><img alt="Screenshot2" width="205px" src="readme_assets/2_ipad.png"><img alt="Screenshot3" width="205px" src="readme_assets/3_ipad.png">
+<img alt="Screenshot" width="205px" src="readme_assets/1.png"><img alt="Screenshot2" width="205px" src="readme_assets/2.png"><img alt="Screenshot3" width="205px" src="readme_assets/3.png"><img alt="Screenshot4" width="205px" src="readme_assets/4.png">
+<br><img alt="Screenshot" width="205px" src="readme_assets/1_ipad.png"><img alt="Screenshot2" width="205px" src="readme_assets/2_ipad.png"><img alt="Screenshot3" width="205px" src="readme_assets/3_ipad.png"><img alt="Screenshot4" width="205px" src="readme_assets/4_ipad.png">
 
 
 # Tags
