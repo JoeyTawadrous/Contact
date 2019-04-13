@@ -10,7 +10,8 @@
     },
 
 
-    "data": [{
+    "data": [
+    {
         "filter": "People",
         "background": "assets/blue.jpeg",
         "title": {
@@ -36,6 +37,13 @@
         "background": "assets/orange.jpeg",
         "title": {
             "text": "Add catchup events \nfor each person"
+        }
+    },
+    {
+        "filter": "ArchivedPeople",
+        "background": "assets/light_blue.jpeg",
+        "title": {
+            "text": "Archive people to your \nhearts content"
         }
     }]
 }

@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             currentTheme != Constants.Purchases.GRASSY_THEME {
 			Utils.set(key: Constants.Defaults.CURRENT_THEME, value: Constants.Purchases.GREEN_THEME)
 		}
-
+        setShowCompletedDefaultValue()
         return true
     }
 	
@@ -117,18 +117,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) { // fired when user quits the application
-        catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: "")
-        
-        let catchUpsDue = catchUps.filter({ (catchUp) -> Bool in
-            let when = catchUp.value(forKey: Constants.CoreData.WHEN) as! Date
-            let dateComparisionResult: ComparisonResult = when.compare(Date())
-            
-            return dateComparisionResult == ComparisonResult.orderedAscending
+        var badgeCount = 0
+        var people = Utils.fetchCoreDataObject(Constants.CoreData.PERSON, predicate: "")
+        people = people.filter({ (person) -> Bool in
+            return !(person.value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false)
         })
-        UIApplication.shared.applicationIconBadgeNumber = catchUpsDue.count
+        
+        if people.count > 0 {
+            for person in people {
+                let catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: person.value(forKey: Constants.CoreData.NAME) as! String? ?? "")
+                for catchUp in catchUps {
+                    let archived = catchUp.value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false
+                    if !archived {
+                        let when = catchUp.value(forKey: Constants.CoreData.WHEN) as! Date
+                        let dateComparisionResult: ComparisonResult = when.compare(Date())
+                        if dateComparisionResult == ComparisonResult.orderedAscending {
+                            badgeCount += 1
+                        }
+                    }
+                }
+            }
+        }
+        
+//        catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: "")
+//        let catchUpsDue = catchUps.filter({ (catchUp) -> Bool in
+//            let when = catchUp.value(forKey: Constants.CoreData.WHEN) as! Date
+//            let dateComparisionResult: ComparisonResult = when.compare(Date())
+//
+//            return dateComparisionResult == ComparisonResult.orderedAscending
+//        })
+        UIApplication.shared.applicationIconBadgeNumber = badgeCount
     }
     
-
+    func setShowCompletedDefaultValue() {
+        if UserDefaults.standard.object(forKey: Constants.LocalData.SHOW_COMPLETED_CATCHUPS) == nil {
+            UserDefaults.standard.set(true, forKey: Constants.LocalData.SHOW_COMPLETED_CATCHUPS)
+        }
+    }
+    
     func migratePersistentStore(){
         
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
@@ -157,6 +183,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if targetUrl == nil {
             targetUrl = newStoreUrl
         }
+        needMigrate = true
         if needMigrate {
             do {
                 try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: targetUrl!, options: storeOptions)

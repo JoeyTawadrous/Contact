@@ -116,6 +116,17 @@ class Utils {
 		catchUp.setValue(UUID().uuidString, forKey: Constants.CoreData.UUID);
 		Utils.saveObject()
 	}
+    
+    class func createArchiveCatchUp(personName: String, type: AnyObject, when: Date, reason: AnyObject) {
+        let catchUp = Utils.createObject(Constants.CoreData.ARCHIVECATCHUP)
+        catchUp.setValue(personName, forKey: Constants.CoreData.NAME)
+        catchUp.setValue(type, forKey: Constants.CoreData.TYPE)
+        catchUp.setValue(when, forKey: Constants.CoreData.WHEN)
+        catchUp.setValue(reason, forKey: Constants.CoreData.REASON)
+        catchUp.setValue(true, forKey: Constants.CoreData.ARCHIVED)
+        catchUp.setValue(UUID().uuidString, forKey: Constants.CoreData.UUID);
+        Utils.saveObject()
+    }
 	
 	class func createObject(_ type: String) -> NSManagedObject {
 		let entity = NSEntityDescription.entity(forEntityName: type, in: fetchManagedObjectContext())

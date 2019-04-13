@@ -13,14 +13,15 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var catchUps = [AnyObject]()
     var selectedPerson = String()
+    var cameFromArchived = false
     
 	
 	
 	/* MARK: Init
 	/////////////////////////////////////////// */
 	override func viewWillAppear(_ animated: Bool) {
-		tableView.delegate = self
-		tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
 		refresh();
 		
 		// Styling
@@ -30,6 +31,10 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		// Observer for every notification received
 		NotificationCenter.default.addObserver(self, selector: #selector(CatchUps.backgoundNofification(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
+        
+        if cameFromArchived {
+            self.navigationItem.rightBarButtonItems = []
+        }
     }
 	
 	override var prefersStatusBarHidden: Bool {
@@ -46,6 +51,16 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		
 		catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
 		catchUps = catchUps.reversed() // newest first
+        for catchUp in catchUps {
+            catchUp.setValue(false, forKey: Constants.CoreData.ARCHIVED)
+        }
+        if UserDefaults.standard.bool(forKey: Constants.LocalData.SHOW_COMPLETED_CATCHUPS) {
+            let archivedCAtchUps = Utils.fetchCoreDataObject(Constants.CoreData.ARCHIVECATCHUP, predicate: selectedPerson)
+            for catchUp in archivedCAtchUps {
+                catchUp.setValue(true, forKey: Constants.CoreData.ARCHIVED)
+            }
+            catchUps.append(contentsOf: archivedCAtchUps)
+        }
 		
 		self.tableView.reloadData()
 	}
@@ -105,6 +120,14 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 			}
 		}
 	}
+    
+    func archieveCatchUp(_ task: NSManagedObject) {
+        let contactName = task.value(forKey: Constants.CoreData.NAME) as! String? ?? ""
+        let type = task.value(forKey: Constants.CoreData.TYPE)
+        let date = task.value(forKey: Constants.CoreData.WHEN) as! Date? ?? Date()
+        let reason = task.value(forKey: Constants.CoreData.REASON)
+        Utils.createArchiveCatchUp(personName: contactName, type: type as AnyObject, when: date, reason: reason as AnyObject)
+    }
 
 	
 	
@@ -117,6 +140,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		}
 		let tasks = self.catchUps[indexPath.row]
 		let type = tasks.value(forKey: Constants.CoreData.TYPE) as! String?
+        let archived = tasks.value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false
 		
 		// Style
 		cell!.selectionStyle = .none
@@ -124,7 +148,17 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		cell.reasonLabel!.text = tasks.value(forKey: Constants.CoreData.REASON) as! String?
 		cell.thumbnailImageView!.image = UIImage(named: type!)
 		cell.thumbnailImageView!.image = cell.thumbnailImageView!.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-		cell.thumbnailImageView!.tintColor = UIColor.white
+        
+        if !archived {
+            cell.thumbnailImageView!.tintColor = UIColor.white
+        } else {
+            cell.thumbnailImageView!.tintColor = UIColor(white: 1.0, alpha: 0.5)
+            cell.reasonLabel?.textColor =  UIColor(white: 1.0, alpha: 0.5)
+            let strikethroughLine = UIView(frame: CGRect(x: 20.0, y: cell.frame.height/2 - 1, width: self.tableView.frame.width - 40, height: 2))
+            strikethroughLine.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+            strikethroughLine.tag = 44
+            cell.addSubview(strikethroughLine)
+        }
 		
 		cell.updateConstraints()
 		
@@ -132,20 +166,25 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 	
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if !cameFromArchived && !(self.catchUps[indexPath.row].value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false) {
+            return true
+        }
+        return false
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 		let deleteAction = UITableViewRowAction(style: .default, title: "Mark Done") {_,_ in
             let catchUp = self.catchUps[indexPath.row] as! NSManagedObject
+            self.archieveCatchUp(catchUp)
             CatchUps.deleteCatchUp(catchUp)
 			
             // Refresh table
-            self.catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: self.selectedPerson)
-            self.catchUps = self.catchUps.reversed() // newest first
-            
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.reloadData()
+//            self.catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: self.selectedPerson)
+//            self.catchUps = self.catchUps.reversed() // newest first
+//
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.reloadData()
+            self.refresh()
 			
 			// Achievements
 			CatchUp.updateCatchupCompleted(view: self)
@@ -164,6 +203,7 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // Show CatchUp view
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let catchUpView = storyBoard.instantiateViewController(withIdentifier: Constants.Views.CATCH_UP) as! CatchUp
+        catchUpView.cameFromArchive = cameFromArchived
         self.show(catchUpView as UIViewController, sender: catchUpView)
     }
 
@@ -208,4 +248,15 @@ class CatchUps: UIViewController, UITableViewDataSource, UITableViewDelegate {
 class CatchUpsTableViewCell : UITableViewCell {
     @IBOutlet var reasonLabel: UILabel?
     @IBOutlet var thumbnailImageView: UIImageView?
+    
+    override func prepareForReuse() {
+        for view in self.subviews {
+            if reasonLabel?.textColor != UIColor.white {
+                reasonLabel?.textColor = UIColor.white
+            }
+            if view.tag == 44 {
+                view.removeFromSuperview()
+            }
+        }
+    }
 }

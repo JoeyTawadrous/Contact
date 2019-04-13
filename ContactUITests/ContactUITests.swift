@@ -30,6 +30,9 @@ class ContactUITests: XCTestCase {
 
     func testExample() {
         let app = XCUIApplication()
+        app.navigationBars["People"].buttons[""].tap()
+        snapshot("ArchivedPeople")
+        app.navigationBars["Archived People"].buttons["People"].tap()
         app.navigationBars["People"].buttons[""].tap()
         app.collectionViews.cells.otherElements.containing(.staticText, identifier:"Buddhist").element.tap()
         snapshot("Achievements")
@@ -41,6 +44,9 @@ class ContactUITests: XCTestCase {
         snapshot("CatchUps")
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Agree on destination & price"]/*[[".cells.staticTexts[\"Agree on destination & price\"]",".staticTexts[\"Agree on destination & price\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         snapshot("CatchUp")
+        
+        
+        
         
     }
 

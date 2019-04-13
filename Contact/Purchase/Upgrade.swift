@@ -168,11 +168,21 @@ extension Upgrade: PaperOnboardingDataSource {
 							   titleColor: UIColor.white,
 							   descriptionColor: UIColor.white,
 							   titleFont: titleFont,
+							   descriptionFont: descriptionFont),
+			
+			OnboardingItemInfo(informationImage: UIImage(named: "key")!,
+							   title: Constants.Strings.UPGRADE_SCREEN_FIVE_TITLE,
+							   description: Constants.Strings.UPGRADE_SCREEN_FIVE_TEXT,
+							   pageIcon: UIImage(named: "transparent")!,
+							   color: UIColor(hex: Constants.Colors.BLUE_DARK),
+							   titleColor: UIColor.white,
+							   descriptionColor: UIColor.white,
+							   titleFont: titleFont,
 							   descriptionFont: descriptionFont)
 			][index]
 	}
 	
 	func onboardingItemsCount() -> Int {
-		return 4
+		return 5
 	}
 }

@@ -15,6 +15,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet var addButton: UIBarButtonItem!
 	@IBOutlet var achievementsButton: UIBarButtonItem!
 	@IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet weak var archiveButton: UIBarButtonItem!
     
     var people = [AnyObject]()
 	
@@ -25,6 +26,9 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
 		people = Utils.fetchCoreDataObject(Constants.CoreData.PERSON, predicate: "")
 		people = people.reversed() // newest first
+        people = people.filter({ (person) -> Bool in
+            return !(person.value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false)
+        })
 		tableView.reloadData()
 		
 		// Demo data
@@ -37,6 +41,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		Utils.createFontAwesomeBarButton(button: addButton, icon: .plus, style: .solid)
 		Utils.createFontAwesomeBarButton(button: achievementsButton, icon: .gem, style: .solid)
 		Utils.createFontAwesomeBarButton(button: menuButton, icon: .bars, style: .solid)
+        Utils.createFontAwesomeBarButton(button: archiveButton, icon: .fileArchive, style: .solid)
 		tableView.separatorStyle = UITableViewCellSeparatorStyle.none
 	}
 	
@@ -65,7 +70,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				self.people.insert(Utils.createPerson(name: textField.text!), at: 0)
 				self.tableView.reloadData()
 				
-				
+                
 				// Achievements
 				var totalPeopleMet = Utils.double(key: Constants.Defaults.APP_DATA_TOTAL_PEOPLE_MET)
 				totalPeopleMet = totalPeopleMet + 1
@@ -128,12 +133,16 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		return cell
     }
 	
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if(editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {_,_ in
             
 			// Delete catchups associated with this goal
 			let catchups = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: "")
-			let person = people[indexPath.row]
+			let person = self.people[indexPath.row]
 			let selectedPerson = person.value(forKey: Constants.CoreData.NAME) as! String?
 			
 			for catchup in catchups {
@@ -143,7 +152,7 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 			}
 			
 			// Delete person
-			let personToDelete = people[indexPath.row]
+			let personToDelete = self.people[indexPath.row]
 			
 			let managedObjectContect = Utils.fetchManagedObjectContext()
 			managedObjectContect.delete(personToDelete as! NSManagedObject)
@@ -154,13 +163,24 @@ class People: UIViewController, UITableViewDataSource, UITableViewDelegate {
 				print(error)
 			}
 			
-			people = Utils.fetchCoreDataObject(Constants.CoreData.PERSON, predicate: "")
-			people = people.reversed() // newest first
+			self.people = Utils.fetchCoreDataObject(Constants.CoreData.PERSON, predicate: "")
+			self.people = self.people.reversed() // newest first
 			
-			tableView.deleteRows(at: [indexPath], with: .automatic)
+			self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.tableView.reloadData()
 		}
 		
-		tableView.reloadData()
+        let archiveAction = UITableViewRowAction(style: .normal, title: "Archive") { (_, _) in
+            // Archive people
+            let person = self.people[indexPath.row]
+            
+            self.people[indexPath.row].setValue(true, forKey: Constants.CoreData.ARCHIVED)
+            Utils.saveObject()
+            self.people.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+        
+        return [deleteAction, archiveAction]
     }
 	
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

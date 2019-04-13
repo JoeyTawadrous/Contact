@@ -41,6 +41,7 @@ class Constants {
 	
 	struct Colors {
 		static let BLUE = "69CDFC"
+		static let BLUE_DARK = "1168E8"
 		static let GREEN = "2ecc71"
 		static let ORANGE = "f39c12"
 		static let PURPLE = "B0B1F1"
@@ -56,9 +57,11 @@ class Constants {
 	
     struct CoreData {
         static let CATCHUP = "CatchUp"
+        static let ARCHIVECATCHUP = "ArchiveCatchUp"
         static let PERSON = "Person"
         static let NAME = "name"
         static let REASON = "reason"
+        static let ARCHIVED = "archived"
         static let THUMBNAIL = "thumbnail"
         static let TYPE = "type"
         static let WHEN = "when"
@@ -94,6 +97,7 @@ class Constants {
 		static let SELECTED_PERSON_INDEX = "selectedPersonIndex"
         static let SELECTED_CATCHUP_INDEX = "selectedCatchupIndex"
         static let DATE_FORMAT = "h:mm a, d MMM, yyyy" // e.g. 4:30 PM, 28 March
+        static let SHOW_COMPLETED_CATCHUPS = "show_completed_catchups"
     }
 	
 	
@@ -167,8 +171,7 @@ class Constants {
 		
 		// Links
 		static let LINK_APP_REVIEW = "itms-apps://itunes.apple.com/app/apple-store/id" + Core.APP_ID + "?action=write-review"
-		static let LINK_FACEBOOK = "https://www.facebook.com/getlearnable"
-		static let LINK_INSTAGRAM = "https://www.instagram.com/learnableapp"
+		static let LINK_INSTAGRAM = "https://www.instagram.com/joeytawadrous"
 		static let LINK_IOS_STORE = "https://itunes.apple.com/us/app/contact-people-organizer/id1101260252?mt=8"
 		static let LINK_PRIVACY_AND_TERMS = "https://www.getLearnable.com/privacy.php"
 		static let LINK_LEARNABLE_IOS_STORE = "https://itunes.apple.com/gb/app/learnable-learn-to-code-from-scratch-level-up/id1254862243?mt=8"
@@ -200,10 +203,12 @@ class Constants {
 		static let UPGRADE_SCREEN_THREE_TEXT = "Gain access to our Sunrise, Salvation, Nightlight themes & more."
 		static let UPGRADE_SCREEN_FOUR_TITLE = "Unlimited Catch Ups"
 		static let UPGRADE_SCREEN_FOUR_TEXT = "Create unlimited people & catch ups to keep in contact with those who matter to you."
+		static let UPGRADE_SCREEN_FIVE_TITLE = "Advanced Settings"
+		static let UPGRADE_SCREEN_FIVE_TEXT = "Archive your people reminders and show your completed catch ups."
 		static let UPGRADE_SCREENS_MONTHLY_SUBSCRIBE_BUTTON_TITLE = "$1.99 \nmonth"
-		static let UPGRADE_SCREENS_YEARLY_SUBSCRIBE_BUTTON_TITLE = "$4.99 \nyear"
+		static let UPGRADE_SCREENS_YEARLY_SUBSCRIBE_BUTTON_TITLE = "$3.99 \nyear"
 		static let UPGRADE_SCREENS_UNLOCK_BUTTON_TITLE = "$6.99 \nonce"
-		static let UPGRADE_SCREENS_INFO = "You'll be charged $1.99/$4.99 month at confirmation of purchase. Your subscription will renew after 1 month unless turned off 24-hours before the end of the subscription period. You can manage this in your App Store settings. For details, see " + Constants.Strings.LINK_PRIVACY_AND_TERMS
+		static let UPGRADE_SCREENS_INFO = "You'll be charged $1.99/$3.99 month at confirmation of purchase. Your subscription will renew after 1 month unless turned off 24-hours before the end of the subscription period. You can manage this in your App Store settings. For details, see " + Constants.Strings.LINK_PRIVACY_AND_TERMS
 		
 
 		// Send Feedback

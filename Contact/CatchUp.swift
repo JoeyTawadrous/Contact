@@ -14,7 +14,7 @@ class CatchUp: UIViewController {
     @IBOutlet var catchUpImageView: UIImageView?
     @IBOutlet var markDoneButton: UIButton?
     
-	
+	var cameFromArchive = false
 	
 	/* MARK: Init
 	/////////////////////////////////////////// */
@@ -28,6 +28,8 @@ class CatchUp: UIViewController {
 		let selectedCatchUpIndex = defaults.integer(forKey: Constants.LocalData.SELECTED_CATCHUP_INDEX)
 		var catchUps = Utils.fetchCoreDataObject(Constants.CoreData.CATCHUP, predicate: selectedPerson)
 		catchUps = catchUps.reversed()
+        let archivedCatchUps = Utils.fetchCoreDataObject(Constants.CoreData.ARCHIVECATCHUP, predicate: selectedPerson)
+        catchUps.append(contentsOf: archivedCatchUps)
 		
 		// Styling
 		Utils.insertGradientIntoView(viewController: self)
@@ -67,6 +69,10 @@ class CatchUp: UIViewController {
         // Complete button
 		markDoneButton!.layer.cornerRadius = 3
 		markDoneButton!.setTitleColor(Utils.getMainColor(), for: UIControlState())
+        
+        if cameFromArchive || catchUps[selectedCatchUpIndex].value(forKey: Constants.CoreData.ARCHIVED) as! Bool? ?? false {
+            markDoneButton?.isHidden = true
+        }
         
         self.addWhiteLayers()
     }
