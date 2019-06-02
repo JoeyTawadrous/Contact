@@ -62,7 +62,7 @@ class Themes: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: false)
 		
 		let themes = Constants.Purchases.Colors.keys
-		let theme = Array(themes)[indexPath.row]
+        let theme = Array(themes)[indexPath.row]
 		
 		var currentTheme = Constants.Purchases.GRASSY_THEME
 		if Utils.contains(key: Constants.Defaults.CURRENT_THEME) {

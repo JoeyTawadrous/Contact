@@ -18,6 +18,7 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 	@IBOutlet var followTheDeveloperButtonIcon: UIButton!
 	@IBOutlet var shareButtonIcon: UIButton!
 	@IBOutlet var twitterButtonIcon: UIButton!
+	@IBOutlet var facebookButtonIcon: UIButton!
 	@IBOutlet var instagramButtonIcon: UIButton!
 	@IBOutlet var backButton: UIBarButtonItem!
 	
@@ -36,6 +37,7 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 		setButtonIcon(button: followTheDeveloperButtonIcon, icon: String.fontAwesomeIcon(name: .userAstronaut), type: .solid)
 		setButtonIcon(button: shareButtonIcon, icon: String.fontAwesomeIcon(name: .rocket), type: .solid)
 		setButtonIcon(button: twitterButtonIcon, icon: String.fontAwesomeIcon(name: .twitter), type: .brands)
+		setButtonIcon(button: facebookButtonIcon, icon: String.fontAwesomeIcon(name: .facebook), type: .brands)
 		setButtonIcon(button: instagramButtonIcon, icon: String.fontAwesomeIcon(name: .instagram), type: .brands)
 		
 		// Styling
@@ -95,12 +97,7 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 	/* MARK: Button Action
 	/////////////////////////////////////////// */
     @IBAction func showCompleted(_ sender: Any) {
-		guard let switchBtn = sender as? UISwitch else {
-			return
-		}
-		UserDefaults.standard.set(switchBtn.isOn, forKey: Constants.LocalData.SHOW_COMPLETED_CATCHUPS)
     }
-	
     @IBAction func backButtonPressed() {
 		Utils.presentView(self, viewName: Constants.Views.PEOPLE_NAV_CONTROLLER)
 	}
@@ -166,6 +163,10 @@ class Settings: UITableViewController, UITextFieldDelegate, MFMailComposeViewCon
 	
 	@IBAction func twitterButtonPressed() {
 		Utils.openURL(url: Constants.Strings.LINK_TWITTER)
+	}
+	
+	@IBAction func facebookButtonPressed() {
+		Utils.openURL(url: Constants.Strings.LINK_FACEBOOK)
 	}
 	
 	@IBAction func instagramButtonPressed() {

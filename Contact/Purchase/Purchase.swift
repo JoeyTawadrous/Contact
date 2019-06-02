@@ -48,6 +48,20 @@ class Purchase {
 		}
 	}
 	
+    class func informationWindow(amountperiod: String) ->UIAlertController {
+        let message = NSMutableAttributedString(string: "A " + amountperiod + " purchase will be applied to your iTunes account on confirmation. Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period. You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.For more information, see our terms and Privacy Policy.")
+        guard let range1 = message.string.range(of: "terms") else { return UIAlertController()}
+        guard let range11 = message.string.nsRange(from: range1) else { return UIAlertController()}
+        guard let range2 = message.string.range(of: "Privacy Policy") else {return UIAlertController()}
+        guard let range22 = message.string.nsRange(from: range2) else { return UIAlertController()}
+        message.addAttribute(.link, value: "https://www.getlearnable.com/terms.php", range: range11)
+        message.addAttribute(.link, value: "https://www.getlearnable.com/privacy.php", range: range22)
+        
+        let alert = UIAlertController(title: "Purchase Info", message: "", preferredStyle: .alert)
+        alert.setValue(message, forKey: "attributedMessage")
+        
+        return alert
+    }
 	
 	class func completeTransactions() {
 		SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
@@ -183,4 +197,13 @@ class Purchase {
 			Purchase.verifyReceipt()
 		}
 	}
+}
+
+extension String {
+    func nsRange(from range: Range<String.Index>) -> NSRange? {
+        guard let from = range.lowerBound.samePosition(in: utf16) else { return nil }
+        guard let to = range.upperBound.samePosition(in: utf16) else { return nil }
+        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
+                       length: utf16.distance(from: from, to: to))
+    }
 }

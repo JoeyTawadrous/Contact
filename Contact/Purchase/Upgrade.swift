@@ -100,21 +100,39 @@ class Upgrade: UIViewController {
 	}
 	
 	@objc func subscribeMonthlyButtonPressed() {
-		SwiftyStoreKit.purchaseProduct(Constants.Purchases.SUBSCRIPTION_MONTHLY_KEY, atomically: true) { result in
-			Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.SUBSCRIPTION_MONTHLY_KEY)
-		}
+        let alert = Purchase.informationWindow(amountperiod: Constants.Strings.UPGRADE_SCREENS_MONTHLY_SUBSCRIBE_BUTTON_TITLE)
+        let okButton = UIAlertAction(title: "Ok", style: .default) { (action) in
+            SwiftyStoreKit.purchaseProduct(Constants.Purchases.SUBSCRIPTION_MONTHLY_KEY, atomically: true) { result in
+                Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.SUBSCRIPTION_MONTHLY_KEY)
+            }
+        }
+        okButton.setValue(UIColor.blue, forKey: "titleTextColor")
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
 	}
 	
 	@objc func subscribeYearlyButtonPressed() {
-		SwiftyStoreKit.purchaseProduct(Constants.Purchases.SUBSCRIPTION_YEARLY_KEY, atomically: true) { result in
-			Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.SUBSCRIPTION_YEARLY_KEY)
-		}
+        let alert = Purchase.informationWindow(amountperiod: Constants.Strings.UPGRADE_SCREENS_YEARLY_SUBSCRIBE_BUTTON_TITLE)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            SwiftyStoreKit.purchaseProduct(Constants.Purchases.SUBSCRIPTION_YEARLY_KEY, atomically: true) { result in
+                Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.SUBSCRIPTION_YEARLY_KEY)
+            }
+        }
+        okAction.setValue(UIColor.blue, forKey: "titleTextColor")
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
 	}
 	
 	@objc func unlockButtonPressed() {
-		SwiftyStoreKit.purchaseProduct(Constants.Purchases.UNLOCK_KEY, atomically: true) { result in
-			Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.UNLOCK_KEY)
-		}
+        let alert = Purchase.informationWindow(amountperiod: Constants.Strings.UPGRADE_SCREENS_UNLOCK_BUTTON_TITLE)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            SwiftyStoreKit.purchaseProduct(Constants.Purchases.UNLOCK_KEY, atomically: true) { result in
+                Purchase.handlePurchaseResult(result, view: self, purchaseItem: Constants.Purchases.UNLOCK_KEY)
+            }
+        }
+        okAction.setValue(UIColor.blue, forKey: "titleTextColor")
+		alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
 	}
 }
 
@@ -168,21 +186,11 @@ extension Upgrade: PaperOnboardingDataSource {
 							   titleColor: UIColor.white,
 							   descriptionColor: UIColor.white,
 							   titleFont: titleFont,
-							   descriptionFont: descriptionFont),
-			
-			OnboardingItemInfo(informationImage: UIImage(named: "key")!,
-							   title: Constants.Strings.UPGRADE_SCREEN_FIVE_TITLE,
-							   description: Constants.Strings.UPGRADE_SCREEN_FIVE_TEXT,
-							   pageIcon: UIImage(named: "transparent")!,
-							   color: UIColor(hex: Constants.Colors.BLUE_DARK),
-							   titleColor: UIColor.white,
-							   descriptionColor: UIColor.white,
-							   titleFont: titleFont,
 							   descriptionFont: descriptionFont)
 			][index]
 	}
 	
 	func onboardingItemsCount() -> Int {
-		return 5
+		return 4
 	}
 }
